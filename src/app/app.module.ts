@@ -17,31 +17,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatButtonModule} from '@angular/material/button';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
 import { NavbarDashboardComponent } from './components/navbar-dashboard/navbar-dashboard.component';
-import { DemoComponent } from './demo/demo.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import {MatCardModule} from '@angular/material/card';
-import { RootCategoryComponent } from './pages/rootCategoryComponent/root-category/root-category.component';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
-import { ShowRootCategoryComponent } from './pages/rootCategoryComponent/show-root-category/show-root-category.component';
 import {MatTableModule} from '@angular/material/table';
-import { UpdateRootCategoryComponent } from './pages/rootCategoryComponent/update-root-category/update-root-category.component';
-import { SubCategoryComponent } from './pages/subCategoryComponent/sub-category/sub-category.component';
 import {MatSelectModule} from '@angular/material/select';
-import { ShowSubCategoryComponent } from './pages/subCategoryComponent/show-sub-category/show-sub-category.component';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
-import { UpdateSubCategoryComponent } from './pages/subCategoryComponent/update-sub-category/update-sub-category.component';
-import { UploadFilesRootCategoryComponent } from './pages/rootCategoryComponent/upload-files-root-category/upload-files-root-category.component';
-import { UploadFileFormRootCatComponent } from './pages/rootCategoryComponent/upload-file-form-root-cat/upload-file-form-root-cat.component';
-import { UploadFilesSubCategoryComponent } from './pages/subCategoryComponent/upload-files-sub-category/upload-files-sub-category.component';
-import { UploadFileFormSubCatComponent } from './pages/subCategoryComponent/upload-file-form-sub-cat/upload-file-form-sub-cat.component';
-import { AddProductComponent } from './pages/productComponent/add-product/add-product.component';
-import { ShowProductComponent } from './pages/productComponent/show-product/show-product.component';
-import { UpdateProductComponent } from './pages/productComponent/update-product/update-product.component';
-import { UploadFilesProductComponent } from './pages/productComponent/upload-files-product/upload-files-product.component';
-import { UploadFilesFormProductComponent } from './pages/productComponent/upload-files-form-product/upload-files-form-product.component';
-import { BannerComponent } from './pages/banner/banner/banner.component';
-import { ShowBannerComponent } from './pages/banner/show-banner/show-banner.component';
-import { UploadBannerFileComponent } from './pages/banner/upload-banner-file/upload-banner-file.component';
 
 
 
@@ -58,26 +39,7 @@ import { UploadBannerFileComponent } from './pages/banner/upload-banner-file/upl
     BoardModeratorComponent,
     BoardUserComponent,
     NavbarDashboardComponent,
-    DemoComponent,
     DashboardComponent,
-    RootCategoryComponent,
-    ShowRootCategoryComponent,
-    UpdateRootCategoryComponent,
-    SubCategoryComponent,
-    ShowSubCategoryComponent,
-    UpdateSubCategoryComponent,
-    UploadFilesRootCategoryComponent,
-    UploadFileFormRootCatComponent,
-    UploadFilesSubCategoryComponent,
-    UploadFileFormSubCatComponent,
-    AddProductComponent,
-    ShowProductComponent,
-    UpdateProductComponent,
-    UploadFilesProductComponent,
-    UploadFilesFormProductComponent,
-    BannerComponent,
-    ShowBannerComponent,
-    UploadBannerFileComponent,
     
     
     

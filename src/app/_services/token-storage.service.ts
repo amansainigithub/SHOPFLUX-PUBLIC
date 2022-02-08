@@ -10,8 +10,8 @@ export class TokenStorageService {
   constructor() { }
 
   signOut(): void {
+    localStorage.removeItem("USER_KEY");
     localStorage.removeItem("TOKEN_KEY");
-    localStorage.removeItem("TOKEN_USER");
    // window.sessionStorage.clear();
   }
 
