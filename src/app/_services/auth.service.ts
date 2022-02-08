@@ -28,5 +28,6 @@ export class AuthService {
       email,
       password
     }, httpOptions);
+    
   }
 }
