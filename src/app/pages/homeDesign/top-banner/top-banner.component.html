@@ -1,0 +1,9 @@
+ <!-- GET TOP_BANNER START-->
+ <owl-carousel-o [options]="customOptions">
+    <ng-container *ngFor="let topBanner of topBannerData; let i = index">
+      <ng-template carouselSlide [id]="topBanner.id">
+        <img class="topBannerCarousel objectFit" [src]="topBanner.fileUrl" [alt]="topBanner.id" [title]="topBanner.id" height="300">
+      </ng-template>
+    </ng-container>
+  </owl-carousel-o>
+    <!-- GET TOP_BANNER FINISH-->

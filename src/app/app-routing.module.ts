@@ -10,7 +10,9 @@ import { BoardModeratorComponent } from './board-moderator/board-moderator.compo
 import { BoardAdminComponent } from './board-admin/board-admin.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { AuthLoginGuard } from './authGuards/auth-login.guard';
+import { ProductComponent } from './pages/productWatch/product/product.component';
 const routes: Routes = [
+  { path: '', component: HomeComponent },
   { path: 'home', component: HomeComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
@@ -18,12 +20,12 @@ const routes: Routes = [
   { path: 'user', component: BoardUserComponent },
   { path: 'mod', component: BoardModeratorComponent },
   { path: 'admin', component: BoardAdminComponent },
+  { path: ':finalCategoryName', component: ProductComponent },
+
+
   { path: 'dashboard',canActivate:[AuthLoginGuard], 
   children: [
               { path: '', component: DashboardComponent},
-             
-
-
             ]
   },
   // { path: '',component:LoginComponent},

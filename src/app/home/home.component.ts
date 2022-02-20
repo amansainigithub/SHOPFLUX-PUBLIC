@@ -15,42 +15,30 @@ export class HomeComponent implements OnInit {
     dynamicValue:false
   }
 
-  productData:any;
+  //productData:any;
 
   constructor(private userService: UserService,private productService:ProductService) { }
 
+
   ngOnInit(): void {
-
-    //FETCHING PRODUCT
-    this.getProductList();
-
-    // this.userService.getPublicContent().subscribe(
-    //   data => {
-    //   },
-    //   err => {
-    //     this.content = JSON.parse(err.error).message;
-    //   }
-    // );
   }
 
-  getProductList()
-  {
-    this.progressBar_Starting();
-      this.productService.getProductList().subscribe(
-        data=>{
-            this.productData=data;
-            console.log(data);
-            this.progressBar_Stop();
-        },error=>{
-            console.log(error);
-            this.progressBar_Stop();
-        }
-      )
-  }
+  // getProductList()
+  // {
+  //   this.progressBar_Starting();
+  //     this.productService.getProductList().subscribe(
+  //       data=>{
+  //           this.productData=data;
+  //           //console.log(data);
+  //           this.progressBar_Stop();
+  //       },error=>{
+  //           console.log(error);
+  //           this.progressBar_Stop();
+  //       }
+  //     )
+  // }
 
 
-
-  
   progressBar_Starting()
   {
     this.progressBar.dynamicValue=true;

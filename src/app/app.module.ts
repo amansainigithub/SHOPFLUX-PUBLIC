@@ -23,7 +23,12 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatTableModule} from '@angular/material/table';
 import {MatSelectModule} from '@angular/material/select';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
-
+import { CarouselModule } from 'ngx-owl-carousel-o';
+import { TestingComponent } from './pages/test/testing/testing.component';
+import { TopBannerComponent } from './pages/homeDesign/top-banner/top-banner.component';
+import { FinalCategoryBannerComponent } from './pages/homeDesign/final-category-banner/final-category-banner.component';
+import { ProductRandomBannerComponent } from './pages/homeDesign/product-random-banner/product-random-banner.component';
+import { ProductComponent } from './pages/productWatch/product/product.component';
 
 
 
@@ -40,6 +45,11 @@ import {MatSlideToggleModule} from '@angular/material/slide-toggle';
     BoardUserComponent,
     NavbarDashboardComponent,
     DashboardComponent,
+    TestingComponent,
+    TopBannerComponent,
+    FinalCategoryBannerComponent,
+    ProductRandomBannerComponent,
+    ProductComponent,
     
     
     
@@ -59,6 +69,7 @@ import {MatSlideToggleModule} from '@angular/material/slide-toggle';
     MatTableModule,
     MatSelectModule,
     MatSlideToggleModule,
+    CarouselModule,
     
   ],
   providers: [authInterceptorProviders],

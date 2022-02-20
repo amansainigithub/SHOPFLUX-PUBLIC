@@ -15,5 +15,28 @@ export class ProductService {
  return this.http.get(this._AUTH_URL_SERVICE.authUrl+"getProductList_public")
   }
 
+  //GET PRODUCT LIST
+  getTopBanner()
+  {
+ return this.http.get(this._AUTH_URL_SERVICE.authUrl+"getTopBannerList_public")
+  }
+
+
+  getFinalCategoryList()
+  {
+ return this.http.get(this._AUTH_URL_SERVICE.authUrl+"getFinalCategoryList_public")
+  }
+
+  getProductListByFinalCategory()
+  {
+ return this.http.get(this._AUTH_URL_SERVICE.authUrl+"getProductByFinalCategory_public/")
+  }
+
+  getProductListByFinalCategoryName(finalCategoryName:any)
+  {
+ return this.http.get(this._AUTH_URL_SERVICE.authUrl+"getProductListByFinalCategoryName_public/"+finalCategoryName)
+  }
+
+
 
 }

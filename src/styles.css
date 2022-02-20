@@ -21,3 +21,33 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 {
     text-decoration: underline;
 }
+
+.objectFit
+{
+    object-fit: cover;
+}
+
+.borderRadius2
+{
+    border-radius: 2px;
+}
+
+.borderRadius4
+{
+    border-radius: 4px;
+}
+
+.borderRadius6
+{
+    border-radius: 6px;
+}
+
+.borderRadius8
+{
+    border-radius: 8px;
+}
+
+.borderRadius10
+{
+    border-radius: 10px;
+}
