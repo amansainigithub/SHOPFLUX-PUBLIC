@@ -11,6 +11,7 @@ import { BoardAdminComponent } from './board-admin/board-admin.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { AuthLoginGuard } from './authGuards/auth-login.guard';
 import { ProductComponent } from './pages/productWatch/product/product.component';
+import { TestingComponent } from './pages/test/testing/testing.component';
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'home', component: HomeComponent },
@@ -20,8 +21,8 @@ const routes: Routes = [
   { path: 'user', component: BoardUserComponent },
   { path: 'mod', component: BoardModeratorComponent },
   { path: 'admin', component: BoardAdminComponent },
-  { path: ':finalCategoryName', component: ProductComponent },
-
+  { path: 'p/:finalCategoryName', component: ProductComponent },
+  { path: 'testing', component: TestingComponent },
 
   { path: 'dashboard',canActivate:[AuthLoginGuard], 
   children: [
