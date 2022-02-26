@@ -12,6 +12,7 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { AuthLoginGuard } from './authGuards/auth-login.guard';
 import { ProductComponent } from './pages/productWatch/product/product.component';
 import { TestingComponent } from './pages/test/testing/testing.component';
+import { ProductDetailsComponent } from './pages/productDetailsF/product-details/product-details.component';
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'home', component: HomeComponent },
@@ -22,7 +23,9 @@ const routes: Routes = [
   { path: 'mod', component: BoardModeratorComponent },
   { path: 'admin', component: BoardAdminComponent },
   { path: 'p/:finalCategoryName', component: ProductComponent },
+  { path: 'pd/:productName/:productId', component: ProductDetailsComponent },
   { path: 'testing', component: TestingComponent },
+ 
 
   { path: 'dashboard',canActivate:[AuthLoginGuard], 
   children: [

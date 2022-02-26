@@ -29,6 +29,8 @@ import { TopBannerComponent } from './pages/homeDesign/top-banner/top-banner.com
 import { FinalCategoryBannerComponent } from './pages/homeDesign/final-category-banner/final-category-banner.component';
 import { ProductRandomBannerComponent } from './pages/homeDesign/product-random-banner/product-random-banner.component';
 import { ProductComponent } from './pages/productWatch/product/product.component';
+import { ProductDetailsComponent } from './pages/productDetailsF/product-details/product-details.component';
+import {MatBadgeModule} from '@angular/material/badge';
 
 
 
@@ -50,6 +52,7 @@ import { ProductComponent } from './pages/productWatch/product/product.component
     FinalCategoryBannerComponent,
     ProductRandomBannerComponent,
     ProductComponent,
+    ProductDetailsComponent,
     
     
     
@@ -70,6 +73,7 @@ import { ProductComponent } from './pages/productWatch/product/product.component
     MatSelectModule,
     MatSlideToggleModule,
     CarouselModule,
+    MatBadgeModule,
     
   ],
   providers: [authInterceptorProviders],

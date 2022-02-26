@@ -7,7 +7,7 @@
           <ng-template carouselSlide [id]="data.productId">
 
              <div class="card mt-3" style="width: 14rem; height: 18rem;">
-                  <a href="">
+                  <a  [routerLink]="'/pd/'+data.productName+'/'+data.productId">
                        <img class="card-img-top" [src]="data.thumbnailUrl" class="objectFit"
                        [alt]="data.productId" [title]="data.productId">
                   </a>

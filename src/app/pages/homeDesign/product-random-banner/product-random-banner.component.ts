@@ -58,9 +58,9 @@ export class ProductRandomBannerComponent implements OnInit {
   getProductListByFinalCategory()
   {
     this.progressBar_Starting();
-      this.productService.  getProductListByFinalCategory().subscribe(
+      this.productService.getProductListByFinalCategory().subscribe(
         data=>{
-            //console.log("TEST*************************************");
+           // console.log("TEST*************************************");
             this.productfinalCategoryData=data;
            // console.log(this.productfinalCategoryData);
             this.progressBar_Stop();

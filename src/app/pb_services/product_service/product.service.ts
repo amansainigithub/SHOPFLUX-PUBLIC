@@ -37,6 +37,12 @@ export class ProductService {
  return this.http.get(this._AUTH_URL_SERVICE.authUrl+"getProductListByFinalCategoryName_public/"+finalCategoryName)
   }
 
+  getproductByProductId(productId:any)
+  {
+ return this.http.get(this._AUTH_URL_SERVICE.authUrl+"getProductByProductId/"+productId)
+  }
+
+
 
 
 }
