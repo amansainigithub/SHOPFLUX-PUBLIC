@@ -1,7 +1,8 @@
 <div id="app">
   <nav class="navbar navbar-expand navbar-dark bg-dark">
     <a href="#" class="navbar-brand">ShopFlux</a>
-  
+
+ 
  
     <ul class="navbar-nav ml-auto" *ngIf="!tokenStorageService.isLoggedIn()" >
      
@@ -19,6 +20,20 @@
         <a href class="nav-link" (click)="logout()">logout</a>
       </li>
     </ul>
+
+    
+   
+
+    <li class="nav-item" >
+      <a routerLink="cart" >
+        <span  [matBadge]="badgeContent" matBadgeOverlap="false"  class=" text-light cursor-pointer">
+          <i class="fa fa-shopping-cart" style="font-size: 18px;"> </i>
+        </span>
+      </a>
+    </li>
+  
+
+
   </nav>
 </div>
 

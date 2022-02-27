@@ -1,5 +1,8 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AuthURLService } from './helper-msg/auth-url.service';
+import { ProductDetailsComponent } from './pages/productDetailsF/product-details/product-details.component';
 import { TokenStorageService } from './_services/token-storage.service';
 
 @Component({
@@ -13,8 +16,14 @@ export class AppComponent implements OnInit {
   showAdminBoard = false;
   showModeratorBoard = false;
   username?: string;
+  
 
-  constructor(public  tokenStorageService: TokenStorageService,private _router:Router) { }
+  constructor(public  tokenStorageService: TokenStorageService,
+              private _router:Router,
+              private http: HttpClient,
+              private _AUTH_URL_SERVICE:AuthURLService,) {
+   
+   }
 
   ngOnInit(): void {
 
@@ -22,7 +31,7 @@ export class AppComponent implements OnInit {
     {
       this._router.navigateByUrl("/login");
     }
-
+   this. getCartLength();
     // this.isLoggedIn = !!this.tokenStorageService.getToken();
     // if (this.isLoggedIn) {
     //   const user = this.tokenStorageService.getUser();
@@ -38,4 +47,19 @@ export class AppComponent implements OnInit {
     this._router.navigateByUrl("/login")
     
   }
+
+ 
+badgeContent:any;
+
+
+   getCartLength()
+   {
+    let cartListNew = JSON.parse(localStorage.getItem("cart")  || '{}' );
+     this.badgeContent = cartListNew.length;
+   }
+ 
+ 
+
+
+
 }

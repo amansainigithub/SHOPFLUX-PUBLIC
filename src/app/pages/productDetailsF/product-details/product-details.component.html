@@ -29,8 +29,8 @@
                      {{node.sellPrice}}
                </h2>
 
-               <button type="button" class="btn btn-primary mb-2">Add To Cart</button>
-               <button type="button" class="btn btn-warning">Buy Now</button>
+               <button type="button" class="btn btn-primary mb-2" (click)="addToCart(node.productId,node.productName)">Add To Cart</button>
+               <button type="button" class="btn btn-warning" (click)="testing()">Buy Now</button>
 
            </div>
         </div>
@@ -42,3 +42,15 @@
     </div>
 
 </div>
+
+
+<!-- 
+<div  *ngFor="let fileData of cartListNew; let i = index" >
+
+    <p>
+        {{fileData.productName}}
+        {{fileData.productId}}
+        {{fileData.productQuantity}}
+    </p>
+
+</div> -->

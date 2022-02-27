@@ -13,6 +13,7 @@ import { AuthLoginGuard } from './authGuards/auth-login.guard';
 import { ProductComponent } from './pages/productWatch/product/product.component';
 import { TestingComponent } from './pages/test/testing/testing.component';
 import { ProductDetailsComponent } from './pages/productDetailsF/product-details/product-details.component';
+import { CartPageComponent } from './pages/cart/cart-page/cart-page.component';
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'home', component: HomeComponent },
@@ -24,6 +25,7 @@ const routes: Routes = [
   { path: 'admin', component: BoardAdminComponent },
   { path: 'p/:finalCategoryName', component: ProductComponent },
   { path: 'pd/:productName/:productId', component: ProductDetailsComponent },
+  { path: 'cart', component: CartPageComponent },
   { path: 'testing', component: TestingComponent },
  
 

@@ -31,6 +31,7 @@ import { ProductRandomBannerComponent } from './pages/homeDesign/product-random-
 import { ProductComponent } from './pages/productWatch/product/product.component';
 import { ProductDetailsComponent } from './pages/productDetailsF/product-details/product-details.component';
 import {MatBadgeModule} from '@angular/material/badge';
+import { CartPageComponent } from './pages/cart/cart-page/cart-page.component';
 
 
 
@@ -53,6 +54,7 @@ import {MatBadgeModule} from '@angular/material/badge';
     ProductRandomBannerComponent,
     ProductComponent,
     ProductDetailsComponent,
+    CartPageComponent,
     
     
     
