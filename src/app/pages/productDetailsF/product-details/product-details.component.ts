@@ -21,6 +21,9 @@ export class ProductDetailsComponent implements OnInit {
   node:any;
   productFiles:any;
 
+  //THUMBNAIL var
+  thumbnailUrl:any;
+
   ngOnInit(): void {
     this.productName = this._activateRoute.snapshot.params.productName;
      this.productId = this._activateRoute.snapshot.params.productId;
@@ -29,9 +32,6 @@ export class ProductDetailsComponent implements OnInit {
 
     //calling PRODUCT BY ID
     this.getProductDetailsById();
-
-    //
-     this. testing()
   }
 
 
@@ -45,6 +45,9 @@ export class ProductDetailsComponent implements OnInit {
             
          //PRODUCT FILE URLS
          this.productFiles = this.node.productFileUrls;
+
+        //PUT THUMBNAIL IMAGE TO GLOBAL
+        this.thumbnailUrl = this.node.thumbnailUrl;
          
         },
         error=>{
@@ -55,26 +58,35 @@ export class ProductDetailsComponent implements OnInit {
       )
   }
 
+  //CHANGE FILE URL {thumbnailurl --> fileUrl with reverse}
+  changFileUrl(fileUrl:any)
+  {
+   this.thumbnailUrl = fileUrl;
+  }
 
-  //****************** */
+
+  //*********ADD TO CART********* */
 
   cartList:any = [];
   cartListNew:any = [];
    cartObject:any={
     "productId":"",
     "productName":"",
-    "productQuantity":1
+    "url":"",
+    "productQuantity":1,
+    "productPrice":""
   }
 
 
-
-  addToCart(productId:any,productName:any)
+  addToCart(productId:any,productName:any,url:any,productPrice:any)
   {
-      console.log(productId);
-      console.log(productName);
+      // console.log(productId);
+      // console.log(productName);
 
       this.cartObject.productId = productId;
-      this.cartObject.productName = productName
+      this.cartObject.productName = productName;
+      this.cartObject.url = url;
+      this.cartObject.productPrice = productPrice;
 
       console.log("***********************");
       //console.log(this.cartList);
@@ -108,9 +120,13 @@ export class ProductDetailsComponent implements OnInit {
               
          }
          else{
+
           //CREATE AND ADD NEW PRODUCT
           this.cartObject.productId = productId;
           this.cartObject.productName = productName;
+          this.cartObject.url = url;
+          this.cartObject.productPrice = productPrice;
+
             pCart.push(this.cartObject);
             localStorage.setItem("cart",JSON.stringify(pCart));
             this.appCom.getCartLength(); 
@@ -122,16 +138,16 @@ export class ProductDetailsComponent implements OnInit {
       
   }
 
-  testing()
-  {
-   let cartitems =   localStorage.getItem("cart");
-    console.log( JSON.stringify(cartitems));
-    this.cartListNew = JSON.parse(localStorage.getItem("cart")  || '{}' );
-    console.log("&&&&&&&&&&&&&&&&&&&&&&&&");
-    console.log(this.cartListNew);
+  // testing()
+  // {
+  //  let cartitems =   localStorage.getItem("cart");
+  //   console.log( JSON.stringify(cartitems));
+  //   this.cartListNew = JSON.parse(localStorage.getItem("cart")  || '{}' );
+  //   console.log("&&&&&&&&&&&&&&&&&&&&&&&&");
+  //   console.log(this.cartListNew);
   
     
-  }
+  // }
 
 
 

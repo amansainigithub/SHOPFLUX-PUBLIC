@@ -22,7 +22,7 @@
                           <div  *ngFor="let data of productList; let i = index" class="col-md-4 mt-3 borderRadius10" >
            
                               <div class="card border-0 mt-3 ml-2" style="width: 14rem; min-height: 19rem;">
-                                 <a >
+                                 <a [routerLink]="'/pd/'+data.productName+'/'+data.productId">
                                      <img class="card-img-top objectFit"  src="{{data.thumbnailUrl}}" alt="Card image cap" >
                                   </a>
                                    <div class="card-body">

@@ -3,7 +3,9 @@
     <div class="row">
         <div class="col-md-1">
             <div class="card mb-1" *ngFor="let fileData of productFiles; let i = index" style="width: 4rem;">
-                <img class="card-img-top" src="{{fileData.fileUrl}}" alt="Card image cap">
+                <div (click)="changFileUrl(fileData.fileUrl)" class="cursor-pointer">
+                    <img class="card-img-top" src="{{fileData.fileUrl}}" alt="Card image cap">
+                </div>
               </div>
               
         </div>
@@ -11,7 +13,7 @@
 
         <div class="col-md-5">
             <div class="card object-fit" style="width: 22rem; height: 30rem;">
-                <img class="card-img-top" src="{{node.thumbnailUrl}}" alt="Card image cap">
+                <img class="card-img-top" src="{{thumbnailUrl}}" alt="Card image cap">
                 
               </div>
         </div>
@@ -29,8 +31,8 @@
                      {{node.sellPrice}}
                </h2>
 
-               <button type="button" class="btn btn-primary mb-2" (click)="addToCart(node.productId,node.productName)">Add To Cart</button>
-               <button type="button" class="btn btn-warning" (click)="testing()">Buy Now</button>
+               <button type="button" class="btn btn-primary mb-2" (click)="addToCart(node.productId,node.productName,node.thumbnailUrl,node.sellPrice)">Add To Cart</button>
+               <button type="button" class="btn btn-warning" >Buy Now</button>
 
            </div>
         </div>

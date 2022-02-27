@@ -8,8 +8,18 @@ import { Component, OnInit } from '@angular/core';
 export class CartPageComponent implements OnInit {
 
   constructor() { }
+  cartList:any=[];
 
   ngOnInit(): void {
+    //get cart list
+    this.getCartList();
+
+    console.log(this.cartList);
+  }
+
+  getCartList()
+  {
+    this.cartList = JSON.parse(localStorage.getItem("cart")  || '{}' );
   }
 
 }
