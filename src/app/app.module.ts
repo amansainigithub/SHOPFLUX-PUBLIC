@@ -32,6 +32,8 @@ import { ProductComponent } from './pages/productWatch/product/product.component
 import { ProductDetailsComponent } from './pages/productDetailsF/product-details/product-details.component';
 import {MatBadgeModule} from '@angular/material/badge';
 import { CartPageComponent } from './pages/cart/cart-page/cart-page.component';
+import { UserAddressFormComponent } from './pages/addressForm/user-address-form/user-address-form.component';
+import { PaymentSuccessComponent } from './pages/paymentSuccess/payment-success/payment-success.component';
 
 
 
@@ -55,6 +57,8 @@ import { CartPageComponent } from './pages/cart/cart-page/cart-page.component';
     ProductComponent,
     ProductDetailsComponent,
     CartPageComponent,
+    UserAddressFormComponent,
+    PaymentSuccessComponent,
     
     
     

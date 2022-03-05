@@ -1,20 +1,19 @@
 <div class="container border border-primary" style="max-width: 1320px;">
 
     <div class="row">
+
         <div class="col-md-1">
             <div class="card mb-1" *ngFor="let fileData of productFiles; let i = index" style="width: 4rem;">
                 <div (click)="changFileUrl(fileData.fileUrl)" class="cursor-pointer">
                     <img class="card-img-top" src="{{fileData.fileUrl}}" alt="Card image cap">
                 </div>
               </div>
-              
         </div>
 
 
         <div class="col-md-5">
             <div class="card object-fit" style="width: 22rem; height: 30rem;">
                 <img class="card-img-top" src="{{thumbnailUrl}}" alt="Card image cap">
-                
               </div>
         </div>
 

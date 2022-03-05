@@ -1,0 +1,115 @@
+<div class="pB"  *ngIf="progressBar.dynamicValue" >
+  <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+ </div>
+
+<div class="container">
+
+
+    <div  >
+
+        <div class="card" style="width: 30rem;">
+            <div class="card-body">
+              <h4 class="card-title text-center font-weight-bold">Please Fill The Address</h4>
+
+
+              <!-- form -->
+              <form  (ngSubmit)="updateAddress()">
+
+                <div class="form-row">
+
+                  <div class="col-md-12 mb-3">
+                    <input type="text" 
+                    class="form-control" 
+                    id="validationDefault01"
+                    name="addressLine1"
+                    [(ngModel)]="updateAddressObject.addressLine1"
+                    placeholder="Address Line 1" 
+                    required>
+                  </div>
+                </div>
+
+                <div class="form-row">
+
+                    <div class="col-md-12 mb-3">
+                      <input type="text" 
+                      class="form-control" 
+                      id="validationDefault01" 
+                      name="addressLine2"
+                      [(ngModel)]="updateAddressObject.addressLine2"
+                      placeholder="Address Line 2"
+                       required>
+                    </div>
+                  </div>
+
+                        <div class="form-row">
+
+                        <div class="col-md-6 mb-3">
+                            <label for="validationDefault03">City</label>
+                            <input type="text" 
+                            class="form-control"
+                            name="city"    
+                            [(ngModel)]="updateAddressObject.city"
+                            id="validationDefault03" 
+                            placeholder="City" 
+                            required>
+                        </div>
+
+                        <div class="col-md-3 mb-3">
+                            <label for="validationDefault04">State</label>
+                            <input type="text" 
+                            class="form-control" 
+                            name="state"
+                            [(ngModel)]="updateAddressObject.state"
+                            id="validationDefault04" 
+                            placeholder="State" 
+                            required>
+                        </div>
+
+                        <div class="col-md-3 mb-3">
+                            <label for="validationDefault05">Zip</label>
+                            <input type="text" 
+                            class="form-control" 
+                            name="zipCode"
+                            [(ngModel)]="updateAddressObject.zipCode"
+                            id="validationDefault05" 
+                            placeholder="Zip" 
+                            required>
+                        </div>
+
+                        </div>
+
+                        <div class="form-row">
+                            <div class="col-md-12 mb-3">
+                              <input type="text" 
+                              class="form-control" 
+                              id="validationDefault01" 
+                              name="country"
+                              [(ngModel)]="updateAddressObject.country"
+                              placeholder="country" 
+                              required>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="col-md-12 mb-3">
+                              <input type="text" 
+                              class="form-control" 
+                              id="validationDefault01" 
+                              name="mobile"
+                              [(ngModel)]="updateAddressObject.mobile"
+                              placeholder="+91 Mobile" 
+                              required>
+                            </div>
+                        </div>
+
+                <button class="btn btn-primary" type="submit">UPDATE ADDRESS</button>
+              </form>
+                <!-- forms END -->
+
+            </div>
+          </div>
+
+    </div>
+
+
+</div>

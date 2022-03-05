@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { AppComponent } from 'src/app/app.component';
+import { SnackbarHelperService } from 'src/app/helper-msg/snackbar-helper.service';
 import { ProductService } from 'src/app/pb_services/product_service/product.service';
 import { UserService } from 'src/app/_services/user.service';
+import { CartPageComponent } from '../../cart/cart-page/cart-page.component';
 
 @Component({
   selector: 'app-product-details',
@@ -14,7 +16,9 @@ export class ProductDetailsComponent implements OnInit {
   constructor(private userService: UserService,
               private productService:ProductService,
               private _activateRoute:ActivatedRoute,
-              private appCom:AppComponent) { }
+              private appCom:AppComponent,
+              private _snackbar_helper:SnackbarHelperService
+             ) { }
 
   productId:any;
   productName:any;
@@ -95,7 +99,11 @@ export class ProductDetailsComponent implements OnInit {
       {
         this.cartList.push(this.cartObject)
         localStorage.setItem("cart",JSON.stringify(this.cartList));
-        console.log("PRODUCT IS ADDED FIRST TIME");
+        
+        //console.log("PRODUCT IS ADDED FIRST TIME");
+        this._snackbar_helper.
+          OpenSnackbar_verticalPosition_top_right("Product Addd To Cart", "",2000);
+
          this.appCom.getCartLength(); 
       }
       else{
@@ -116,7 +124,9 @@ export class ProductDetailsComponent implements OnInit {
 
               })
               localStorage.setItem("cart",JSON.stringify(pCart));
-              console.log("PRODUCT QUANTITY IS INCREASED...");
+              //console.log("PRODUCT QUANTITY IS INCREASED...");
+              this._snackbar_helper.
+                 OpenSnackbar_verticalPosition_top_right("Product Quantity Increase", "cancel",2000);
               
          }
          else{
@@ -132,22 +142,14 @@ export class ProductDetailsComponent implements OnInit {
             this.appCom.getCartLength(); 
             console.log("PRODUCT ADDED......");
 
+            this._snackbar_helper.
+            OpenSnackbar_verticalPosition_top_right("Product Addd To Cart", "",2000);
          }
           
       }
       
   }
 
-  // testing()
-  // {
-  //  let cartitems =   localStorage.getItem("cart");
-  //   console.log( JSON.stringify(cartitems));
-  //   this.cartListNew = JSON.parse(localStorage.getItem("cart")  || '{}' );
-  //   console.log("&&&&&&&&&&&&&&&&&&&&&&&&");
-  //   console.log(this.cartListNew);
-  
-    
-  // }
 
 
 
