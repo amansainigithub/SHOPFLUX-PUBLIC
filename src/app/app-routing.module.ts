@@ -16,6 +16,7 @@ import { ProductDetailsComponent } from './pages/productDetailsF/product-details
 import { CartPageComponent } from './pages/cart/cart-page/cart-page.component';
 import { UserAddressFormComponent } from './pages/addressForm/user-address-form/user-address-form.component';
 import { PaymentSuccessComponent } from './pages/paymentSuccess/payment-success/payment-success.component';
+import { UserOrderComponent } from './pages/dashboard/user-Order/user-order/user-order.component';
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'home', component: HomeComponent },
@@ -35,6 +36,7 @@ const routes: Routes = [
   children: [
               { path: '', component: DashboardComponent},
               { path: 'userAddress', component: UserAddressFormComponent },
+              { path: 'userOrder', component: UserOrderComponent },
             ]
   },
   // { path: '',component:LoginComponent},

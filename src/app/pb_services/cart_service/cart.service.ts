@@ -26,9 +26,9 @@ export class CartService {
   }
 
 
-  updateParselCartStatus(cartList:any)
+  updateParselCartStatus(cartList:any,orderId:any,paymentId:any)
   {
-      return this.http.post(this._AUTH_URL_SERVICE.authUrl+"updateCartCatcher",cartList)
+      return this.http.post(this._AUTH_URL_SERVICE.authUrl+"updateCartCatcher/"+orderId+"/"+paymentId,cartList)
   }
 
 

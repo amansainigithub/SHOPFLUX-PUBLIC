@@ -1,0 +1,16 @@
+ul.nav li.dropdown:hover > ul.dropdown-menu {
+    display: block;    
+}
+
+.nodecorate
+{
+    text-decoration: none;
+    color: white;
+}
+
+#md
+{
+    margin-left: 10px;
+    color: rgb(11, 26, 226);
+    text-decoration: none;
+}

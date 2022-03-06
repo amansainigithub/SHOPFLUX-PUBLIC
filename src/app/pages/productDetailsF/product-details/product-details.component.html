@@ -1,4 +1,10 @@
-<div class="container border border-primary" style="max-width: 1320px;">
+<!-- PROGRESS BAR -->
+<div class="pB"  *ngIf="progressBar.dynamicValue" >
+    <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+   </div>
+   <!-- PROGRESS BAR  !-->
+
+<div #target class="container"   style="max-width: 1320px;">
 
     <div class="row">
 
@@ -43,6 +49,42 @@
     </div>
 
 </div>
+<!-- CONTAINER FINISH -->
+
+
+    <!-- MORE PRODUCT SATRTING-->
+<div class="container">
+
+    <h3 class="text-center text-success ">BRANDED PRODUCTS</h3>
+
+    <div class="row mt-5">
+
+        <div class="col-sm-2"  *ngFor="let node of moreProduct; let i = index" >
+            <mat-card class="example-card">
+
+               <!-- <a [routerLink]="'/pd/'+node.productName+'/'+node.productId"> -->
+                <a (click)="getProductDetailsByIdClicking(node.productId)" (click)="scroll(target)" [routerLink]="'/pd/'+node.productName+'/'+node.productId" >
+                 <img mat-card-image src="{{node.thumbnailUrl}}" height="210" class="objectFit" alt="Photo of a Shiba Inu">
+               </a>
+
+                <mat-card-actions>
+                    <button mat-raised-button color="primary"  (click)="addToCart(node.productId,node.productName,node.thumbnailUrl,node.sellPrice)">
+                        Add To Cart
+                    </button>
+                </mat-card-actions>
+
+            </mat-card>
+              
+        </div>
+
+    </div>
+</div>
+    <!-- MORE PRODUCT ENDING !!-->
+
+
+
+
+
 
 
 <!-- 

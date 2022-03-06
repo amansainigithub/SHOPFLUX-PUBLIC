@@ -42,6 +42,13 @@ export class ProductService {
       return this.http.get(this._AUTH_URL_SERVICE.authUrl+"getProductByProductId/"+productId)
   }
 
+  getMoreProductByFinalCategoryId_Service(fc_id:any)
+  {
+        console.log(fc_id);
+        
+      return this.http.get(this._AUTH_URL_SERVICE.authUrl+"getProductByFinalCategoryId/"+fc_id)
+  }
+
 
 
 

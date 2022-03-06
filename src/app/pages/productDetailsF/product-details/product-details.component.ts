@@ -1,5 +1,6 @@
+import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { AppComponent } from 'src/app/app.component';
 import { SnackbarHelperService } from 'src/app/helper-msg/snackbar-helper.service';
 import { ProductService } from 'src/app/pb_services/product_service/product.service';
@@ -17,6 +18,7 @@ export class ProductDetailsComponent implements OnInit {
               private productService:ProductService,
               private _activateRoute:ActivatedRoute,
               private appCom:AppComponent,
+              private router:Router,
               private _snackbar_helper:SnackbarHelperService
              ) { }
 
@@ -24,6 +26,14 @@ export class ProductDetailsComponent implements OnInit {
   productName:any;
   node:any;
   productFiles:any;
+  finalCategory:any;
+  moreProduct:any;
+
+  // PROGRESS BAR
+  progressBar:any ={
+    dynamicValue:false
+  }
+
 
   //THUMBNAIL var
   thumbnailUrl:any;
@@ -36,22 +46,32 @@ export class ProductDetailsComponent implements OnInit {
 
     //calling PRODUCT BY ID
     this.getProductDetailsById();
+
   }
 
 
   getProductDetailsById()
   {
       this.productService.getproductByProductId(this.productId).subscribe(
-        data =>{
+        (data:any) =>{
           //PRODUCT DATA
          this.node=data;
-        // console.log(this.node);
+         this.finalCategory = data.finalCategoryId;
+        //  console.log(this.node);
+         console.log(data.finalCategoryId);
+         
             
          //PRODUCT FILE URLS
          this.productFiles = this.node.productFileUrls;
 
         //PUT THUMBNAIL IMAGE TO GLOBAL
         this.thumbnailUrl = this.node.thumbnailUrl;
+
+         //CALLING LIST BY FINAL-CATEGORY-ID
+         this.getMoreProductByFinalCategoryId(data.finalCategoryId);
+
+
+       
          
         },
         error=>{
@@ -62,11 +82,66 @@ export class ProductDetailsComponent implements OnInit {
       )
   }
 
+  getProductDetailsByIdClicking(productId:any)
+  { 
+    //StART Progrss Bar
+    this.progressBar_Starting();
+
+      this.productService.getproductByProductId(productId).subscribe(
+        (data:any) =>{
+          //PRODUCT DATA
+         this.node=data;
+         this.finalCategory = data.finalCategoryId;
+        //  console.log(this.node);
+        // console.log(data.finalCategoryId);
+         
+            
+         //PRODUCT FILE URLS
+         this.productFiles = this.node.productFileUrls;
+
+        //PUT THUMBNAIL IMAGE TO GLOBAL
+        this.thumbnailUrl = this.node.thumbnailUrl;
+
+        //STOP PROGRESS BAR
+        this.progressBar_Stop();
+
+        },
+        error=>{
+            console.log(error);
+
+        //STOP PROGRESS BAR
+        this.progressBar_Stop();
+            
+        }
+
+      )
+  }
+
+  scroll(el: HTMLElement) {
+    el.scrollIntoView({behavior: 'smooth'});
+}
+
+  getMoreProductByFinalCategoryId(finalCategoryId:any)
+  {
+      this.productService.getMoreProductByFinalCategoryId_Service(finalCategoryId)
+      .subscribe(data=>{
+           this.moreProduct = data;
+           console.log(data);
+           
+      },error=>{
+            console.log(error);
+            
+      })
+  }
+
   //CHANGE FILE URL {thumbnailurl --> fileUrl with reverse}
   changFileUrl(fileUrl:any)
   {
    this.thumbnailUrl = fileUrl;
   }
+
+
+
 
 
   //*********ADD TO CART********* */
@@ -151,6 +226,16 @@ export class ProductDetailsComponent implements OnInit {
   }
 
 
+
+  progressBar_Starting()
+  {
+    this.progressBar.dynamicValue=true;
+  }
+
+  progressBar_Stop()
+  {
+    this.progressBar.dynamicValue=false;
+  }
 
 
 }

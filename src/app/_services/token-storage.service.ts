@@ -66,8 +66,8 @@ export class TokenStorageService {
 
   getUserName()
   {
- var node =  this.getUser()
-   return node.username;
+    var node =  this.getUser()
+    return node.username;
   }
 
 }

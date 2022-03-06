@@ -22,15 +22,26 @@
     </ul>
 
     
-   
+    <li class="dropdown">
+      <a  class="dropdown-toggle nodecorate" data-toggle="dropdown" href="#">
+        Dropdown
+      </a>
+      <ul class="dropdown-menu "  role="menu">
+        <li><a id="md" href="#">Profile</a></li>
+        <li><a id="md" routerLink="/dashboard/userOrder">Order</a></li>
+        <li><a id="md" routerLink="/">Home</a></li>
+        <li><a id="md" routerLink="/dashboard">Dashboard</a></li>
+      </ul>
+    </li>
 
-    <li class="nav-item" >
+    <li class="nav-item mr-4" >
       <a routerLink="cart" >
         <span  [matBadge]="badgeContent" matBadgeOverlap="false"  class=" text-light cursor-pointer">
           <i class="fa fa-shopping-cart" style="font-size: 18px;"> </i>
         </span>
       </a>
     </li>
+  
   
 
 
