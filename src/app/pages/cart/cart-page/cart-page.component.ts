@@ -33,7 +33,7 @@ export class CartPageComponent implements OnInit {
     this.getCartList();
     this.addressAssignToGlobal();
 
-    console.log(this.cartList);
+    //console.log(this.cartList);
   }
 
   getCartList()
@@ -70,7 +70,7 @@ getCartPriceSummary()
 
     for(var item in cart){
       var singleNode = cart[item];
-      console.log(singleNode);
+      //console.log(singleNode);
       
     this.totalMrp = this.totalMrp + parseInt( singleNode.productPrice)  * singleNode.productQuantity ;
   //  console.log(this.totalMrp);
@@ -86,7 +86,7 @@ getCartPriceSummary()
 //CHECk-OUT 
 checkOut()
 { 
-    console.log("checkout");
+    //console.log("checkout");
 
     if(!this._tks.isLoggedIn())
     {
@@ -149,25 +149,28 @@ checkOut()
                     //update razorpay data
                     carts.updateRazorPayService(updateRazorPayObj).subscribe(
                       updataRes=>{
-                          console.log(updataRes);
+                          //console.log(updataRes);
+                            console.log("update RP SERV...");
+                            
+
+                          //UPDATE CART CATCHER
+                          carts.updateParselCartStatus(cart,data.razorpay_order_id,data.razorpay_payment_id).subscribe(data=>{
+                            console.log("*************************");
+                            console.log(data);
+                            console.log("update PARSEL CART...");
+                            //NAVIGATE TO SUCCESS PAGE
+                             window.location.href="/payment-success";
+                          },error=>{
+                            console.log(error);
+                            
+                          });
+                          
                           
                       },errorRes=>{
                         console.log(errorRes);
                         
                       }
-                    )
-
-                    //UPDATE CART CATCHER
-                      carts.updateParselCartStatus(cart,data.razorpay_order_id,data.razorpay_payment_id).subscribe(data=>{
-                          console.log(data);
-                          
-                      },error=>{
-                        console.log(error);
-                        
-                      })
-
-                    //NAVIGATE TO SUCCESS PAGE
-                   window.location.href="/payment-success";
+                    );
 
                 },
                 "prefill": {
