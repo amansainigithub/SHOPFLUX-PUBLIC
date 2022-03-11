@@ -150,14 +150,12 @@ checkOut()
                     carts.updateRazorPayService(updateRazorPayObj).subscribe(
                       updataRes=>{
                           //console.log(updataRes);
-                            console.log("update RP SERV...");
                             
 
                           //UPDATE CART CATCHER
                           carts.updateParselCartStatus(cart,data.razorpay_order_id,data.razorpay_payment_id).subscribe(data=>{
-                            console.log("*************************");
-                            console.log(data);
-                            console.log("update PARSEL CART...");
+                            
+                            //console.log("update PARSEL CART...");
                             //NAVIGATE TO SUCCESS PAGE
                              window.location.href="/payment-success";
                           },error=>{

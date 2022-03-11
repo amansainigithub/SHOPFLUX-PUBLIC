@@ -29,9 +29,9 @@
 
                <div  *ngFor="let data of finalCategoryData; let i = index" class="col-md-2 mt-3 borderRadius10" >
 
-                   <div class="card border-0 mt-3 ml-2" style="width: 10rem; min-height: 15rem;">
+                   <div class="card border-0 mt-3 ml-2" >
                       <a [routerLink]="'/p/'+data.finalCategoryName">
-                          <img class="card-img-top objectFit"  src="{{data.imageUrl}}" alt="Card image cap" >
+                          <img class="card-img-top objectFit"  src="{{data.imageUrl}}" style="width: auto;height: 200px;" alt="Card image cap" >
                        </a>
                         <div class="card-body">
                           <p class="card-text text-center" style="font-size: 18px;font-weight: bolder;font-family: Georgia, 'Times New Roman', Times, serif;">
