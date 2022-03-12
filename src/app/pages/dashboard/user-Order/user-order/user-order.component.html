@@ -59,6 +59,18 @@
                             </h5>
                         </mat-card-subtitle>
 
+                        <mat-card-subtitle *ngIf="node.deliveryStatus == 'Y'">
+                            <h5> <span class="font-weight-bold deliveryColor">DELIVERY-STATUS</span> 
+                                <span class="ml-2 whitesmoke p-2 font-weight-bold">
+                                     <span>
+                                         Delivered At : {{node.address}} 
+                                         <i class="fa fa-check text-success"></i>
+                                     </span>
+                                      <i class="	fa fa-truck font-weight-bold deliveryColor"></i> 
+                                 </span>
+                            </h5>
+                        </mat-card-subtitle>
+
                         <mat-card-subtitle *ngIf="node.deliveryDate == null">
                             <h5> <span class="font-weight-bold ">DELIVERY</span> 
                                 <span class="ml-2 whitesmoke p-2 font-weight-bold">
