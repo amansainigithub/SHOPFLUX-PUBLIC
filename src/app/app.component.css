@@ -1,5 +1,6 @@
 ul.nav li.dropdown:hover > ul.dropdown-menu {
     display: block;    
+    padding: 5px;
 }
 
 .nodecorate
@@ -14,3 +15,14 @@ ul.nav li.dropdown:hover > ul.dropdown-menu {
     color: rgb(11, 26, 226);
     text-decoration: none;
 }
+
+.cart-color
+{
+    color: #DE3163;
+    font-size: 18px;
+}
+
+.example-spacer {
+    flex: 1 1 auto;
+  }
+  

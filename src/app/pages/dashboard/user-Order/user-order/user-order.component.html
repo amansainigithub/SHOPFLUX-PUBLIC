@@ -27,7 +27,7 @@
                         </mat-card-subtitle>
                        
                         <mat-card-subtitle>
-                            <i class="fa fa-inr font-weight-bold rColor" aria-hidden="true"></i> 
+                            <i class="fa fa-inr font-weight-bold text-dark" aria-hidden="true"></i> 
                             <span class="ml-2">{{node.productPrice}}</span>
                         </mat-card-subtitle>
 
@@ -67,6 +67,28 @@
                                          <i class="fa fa-check text-success"></i>
                                      </span>
                                       <i class="	fa fa-truck font-weight-bold deliveryColor"></i> 
+                                 </span>
+                            </h5>
+                        </mat-card-subtitle>
+
+                        <mat-card-subtitle *ngIf="node.deliveryOrderCompanyName != null">
+                            <h5> <span class="font-weight-bold deliveryColor">DELIVERY-ORDER-NAME </span> 
+                                <span class="ml-2 whitesmoke p-2 font-weight-bold">
+                                     <span>
+                                        : {{node.deliveryOrderCompanyName}} 
+                                         <i class="fa fa-check text-success"></i>
+                                     </span>
+                                      <i class="	fa fa-truck font-weight-bold deliveryColor"></i> 
+                                 </span>
+                            </h5>
+                        </mat-card-subtitle>
+
+                        <mat-card-subtitle *ngIf="node.deliveryOrderCompanyName != null">
+                            <h5> <span class="font-weight-bold deliveryColor">DELIVERY-ORDER-ID :</span> 
+                                <span class="ml-2 whitesmoke p-2 font-weight-bold">
+                                     <span>
+                                        {{node.deliveryOrderId}} 
+                                     </span>
                                  </span>
                             </h5>
                         </mat-card-subtitle>

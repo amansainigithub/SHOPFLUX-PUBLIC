@@ -1,22 +1,57 @@
 
   <div class="container mt-5">
-   <h3 class="text-center font-weight-bolder mt-2 mb-2">LATEST BRAND</h3>
+   
+   <div >
+    <h3 class="text-center font-weight-bolder popularC">
+         <span class="text-center font-weight-bolder mt-2 mb-2">LATEST BRAND</span>
+    </h3>
+</div>
 
    <owl-carousel-o [options]="customOptionsProduct">
         <ng-container *ngFor="let data of productfinalCategoryData; let i = index">
           <ng-template carouselSlide [id]="data.productId">
 
-             <div class="card mt-3" style="width: 14rem; height: 18rem;">
+             <div class="card mt-3 borderRadius8" style="max-width: 15rem; height: 21rem;">
                   <a  [routerLink]="'/pd/'+data.productName+'/'+data.productId">
-                       <img class="card-img-top" [src]="data.thumbnailUrl" class="objectFit"
-                       [alt]="data.productId" [title]="data.productId">
+                       <img class="card-img-top" style="border-radius: 8px;" 
+                       [src]="data.thumbnailUrl" 
+                       class="objectFit"
+                       [alt]="data.productId" 
+                       [title]="data.productId"
+                       height="220px">
                   </a>
-                  <div class="card-body">
-                  <p class="card-text text-center" style="font-size: 18px;font-weight: bolder;font-family: Georgia, 'Times New Roman', Times, serif;">
-                      Rs {{data.sellPrice}}  
-                  </p>
+
+                 <a [routerLink]="'/pd/'+data.productName+'/'+data.productId">
+                  <div class="card-img-overlay ">
+                    <span class="imgOverlay ">
+                      {{data.savePrice}}%
+                    </span>
                   </div>
+                 </a>
+
+                    <div class="card-body p-2 text-center ">
+
+                      <a  class="aProductName" [routerLink]="'/pd/'+data.productName+'/'+data.productId">
+                        <p>
+                          {{data.productName}}
+                        </p>
+                      </a>
+
+                        <p class="card-text text-center">
+                            <span>
+                              <i class="fa fa-rupee font-weight-bold"></i>
+                              <span class="sellp"> {{data.sellPrice}}  </span>
+                            </span>
+
+                            <span class="mx-1">
+                                <s>  <i class="fa fa-rupee" style="font-size: 12px;" ></i>
+                                 <span class="mrpPrice">  {{data.mrpPrice}}</span>
+                               </s>
+                            </span>
+                        </p>
+                    </div>
              </div>
+
           </ng-template>
         </ng-container>
       </owl-carousel-o>

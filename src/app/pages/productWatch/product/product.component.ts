@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ProductService } from 'src/app/pb_services/product_service/product.service';
 import { UserService } from 'src/app/_services/user.service';
 
@@ -10,7 +10,10 @@ import { UserService } from 'src/app/_services/user.service';
 })
 export class ProductComponent implements OnInit {
 
-  constructor(private userService: UserService,private productService:ProductService,private _activateRoute:ActivatedRoute) { }
+  constructor(private userService: UserService,
+    private productService:ProductService,
+    private _activateRoute:ActivatedRoute
+    ,private router:Router) { }
 
   finalCategoryName:any;
   productList:any;
@@ -20,6 +23,10 @@ export class ProductComponent implements OnInit {
   }
 
   ngOnInit(): void {
+
+    console.log("CURRENT URL");
+    console.log(this.router.url);
+
     this.finalCategoryName = this._activateRoute.snapshot.params.finalCategoryName;
     console.log(this.finalCategoryName);
 

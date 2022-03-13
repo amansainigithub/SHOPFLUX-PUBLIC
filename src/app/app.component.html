@@ -1,30 +1,32 @@
 <div #target id="app">
-  <nav class="navbar navbar-expand navbar-dark bg-dark">
-    <a href="#" class="navbar-brand">ShopFlux</a>
+  <nav class="navbar navbar-expand navbar-dark">
+    <a href="#" class="navbar-brand">
+      <img src="../assets/Logo/qwwww.PNG" width="110" height="30" alt="">
+    </a>
 
  
  
     <ul class="navbar-nav ml-auto" *ngIf="!tokenStorageService.isLoggedIn()" >
      
       <li class="nav-item"  >
-        <a href class="nav-link" routerLink="/login">Login</a>
+        <a href class="nav-link text-dark" routerLink="/login" >Login</a>
       </li>
       <li class="nav-item"  >
-        <a href class="nav-link" routerLink="/register">register</a>
+        <a href class="nav-link text-dark" routerLink="/register">sign up</a>
       </li>
     </ul>
 
     <ul class="navbar-nav ml-auto"  *ngIf="tokenStorageService.isLoggedIn()" >
      
       <li class="nav-item" >
-        <a href class="nav-link" (click)="logout()">logout</a>
+        <a href class="nav-link text-dark" (click)="logout()">SignOut</a>
       </li>
     </ul>
 
     
-    <li class="dropdown">
-      <a  class="dropdown-toggle nodecorate" data-toggle="dropdown" href="#">
-        Dropdown
+    <!-- <li *ngIf="userName != null " class="dropdown text-dark">
+      <a  class="dropdown-toggle nodecorate text-dark" data-toggle="dropdown" href="#">
+      <span class="font-weight-bold"> Hello, {{userName}}</span>
       </a>
       <ul class="dropdown-menu "  role="menu">
         <li><a id="md" href="#">Profile</a></li>
@@ -32,17 +34,29 @@
         <li><a id="md" routerLink="/">Home</a></li>
         <li><a id="md" routerLink="/dashboard">Dashboard</a></li>
       </ul>
+    </li> -->
+
+    
+    <li *ngIf="userName != null " class=" form-inline my-lg-0 nav-item dropdown">
+      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <span class="font-weight-bold text-dark"> Hello, {{userName}}</span>
+      </a>
+      <div class="dropdown-menu p-1" aria-labelledby="navbarDropdown">
+        <a class="dropdown-item" routerLink="/dashboard/userOrder"> <i class="fa fa-tags" style="color: #6495ED;"></i> Order</a>
+        <a class="dropdown-item" routerLink="/"><i class="fa fa-home" style="color: #FF7F50;"> </i> Home</a>
+        <a class="dropdown-item"routerLink="/dashboard"><i class="fa fa-tachometer" style="color: #DE3163;" aria-hidden="true"></i> Dashboard</a>
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item" href (click)="logout()"><i class="	fa fa-unlock-alt"></i> Logout</a>
+      </div>
     </li>
 
-    <li class="nav-item mr-4" >
+    <li class="nav-item mr-5" >
       <a routerLink="cart" >
-        <span  [matBadge]="badgeContent" matBadgeOverlap="false"  class=" text-light cursor-pointer">
-          <i class="fa fa-shopping-cart" style="font-size: 18px;"> </i>
+        <span  [matBadge]="badgeContent" matBadgeOverlap="false"  class=" cursor-pointer">
+          <i class="fa fa-shopping-cart cart-color"> </i>
         </span>
       </a>
     </li>
-  
-  
 
 
   </nav>
@@ -51,5 +65,4 @@
 
 
 <!-- <h1>HOME DATA</h1> -->
-
 <router-outlet></router-outlet>

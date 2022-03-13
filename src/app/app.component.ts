@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthURLService } from './helper-msg/auth-url.service';
 import { ProductDetailsComponent } from './pages/productDetailsF/product-details/product-details.component';
+import { ProductService } from './pb_services/product_service/product.service';
 import { TokenStorageService } from './_services/token-storage.service';
 
 @Component({
@@ -21,9 +22,12 @@ export class AppComponent implements OnInit {
   constructor(public  tokenStorageService: TokenStorageService,
               private _router:Router,
               private http: HttpClient,
-              private _AUTH_URL_SERVICE:AuthURLService,) {
-   
+              private _AUTH_URL_SERVICE:AuthURLService,
+              ) {
    }
+
+   userName:any;
+   
 
   ngOnInit(): void {
 
@@ -31,7 +35,14 @@ export class AppComponent implements OnInit {
     {
       this._router.navigateByUrl("/login");
     }
+
    this. getCartLength();
+
+   this.getUserName();
+
+
+
+
     // this.isLoggedIn = !!this.tokenStorageService.getToken();
     // if (this.isLoggedIn) {
     //   const user = this.tokenStorageService.getUser();
@@ -60,6 +71,13 @@ badgeContent:any;
  
  
 
+   getUserName()
+   {
+    this.userName =  this.tokenStorageService.getUserName();
+   }
+
+
+ 
 
 
 }

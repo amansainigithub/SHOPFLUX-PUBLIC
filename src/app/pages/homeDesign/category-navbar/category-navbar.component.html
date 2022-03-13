@@ -1,0 +1,14 @@
+<!-- FINAL CATEGORY LIST -->
+
+<nav class="navbar navbar-light bg-light">
+    <div class="container">
+     <ul *ngFor="let node of finalCategoryData; let i = index"  class="navbar-nav">
+       <li *ngIf="10 > i" class="nav-item active">
+         <a [routerLink]="'/p/'+node.finalCategoryName" class="fcAncchor">
+           <span class="finalCN text-dark">  {{node.finalCategoryName}} </span>
+         </a>
+       </li>
+     </ul>
+    </div>
+ </nav>
+ 

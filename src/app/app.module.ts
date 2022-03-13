@@ -36,6 +36,10 @@ import { UserAddressFormComponent } from './pages/addressForm/user-address-form/
 import { PaymentSuccessComponent } from './pages/paymentSuccess/payment-success/payment-success.component';
 import { UserOrderComponent } from './pages/dashboard/user-Order/user-order/user-order.component';
 import { OrderSidebarComponent } from './pages/dashboard/user-Order/order-sidebar/order-sidebar.component';
+import {MatMenuModule} from '@angular/material/menu';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatIconModule} from '@angular/material/icon';
+import { CategoryNavbarComponent } from './pages/homeDesign/category-navbar/category-navbar.component';
 
 
 
@@ -62,6 +66,7 @@ import { OrderSidebarComponent } from './pages/dashboard/user-Order/order-sideba
     PaymentSuccessComponent,
     UserOrderComponent,
     OrderSidebarComponent,
+    CategoryNavbarComponent,
     
     
     
@@ -83,6 +88,9 @@ import { OrderSidebarComponent } from './pages/dashboard/user-Order/order-sideba
     MatSlideToggleModule,
     CarouselModule,
     MatBadgeModule,
+    MatMenuModule,
+    MatToolbarModule,
+    MatIconModule
     
   ],
   providers: [authInterceptorProviders],

@@ -1,6 +1,7 @@
 import { collectExternalReferences } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AppComponent } from '../app.component';
 import { AuthService } from '../_services/auth.service';
 import { TokenStorageService } from '../_services/token-storage.service';
 
@@ -24,7 +25,10 @@ export class LoginComponent implements OnInit {
   errorMessage = '';
   roles: string[] = [];
 
-  constructor(private authService: AuthService, public tokenStorage: TokenStorageService,private _router:Router) { }
+  constructor(private authService: AuthService, 
+    public tokenStorage: TokenStorageService,
+    private _router:Router,
+    private appComm:AppComponent) { }
 
   ngOnInit(): void {
     if (this.tokenStorage.getToken()) {
@@ -42,7 +46,11 @@ export class LoginComponent implements OnInit {
         
         this.tokenStorage.saveToken(data.accessToken);
         this.tokenStorage.saveUser(data);
-        this._router.navigateByUrl("/dashboard");
+        this._router.navigateByUrl("/");
+
+        //call username
+        this.appComm.getUserName();
+
         //Stop Progrss Bar
         this.progressBar_Stop();
       },

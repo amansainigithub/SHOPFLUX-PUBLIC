@@ -1,41 +1,25 @@
-<!-- <div class="container mb-5">
-    <h3 class="text-center font-weight-bolder mt-2 mb-2">POPULAR CATEGORY</h3>
 
-    <owl-carousel-o [options]="customOptionsProduct">
-         <ng-container *ngFor="let data of finalCategoryData; let i = index">
-           <ng-template carouselSlide [id]="data.finalCategoryId">
+<div class="container mt-5" style="max-width: 1280px; ">
 
-              <div class="card mt-3" style="width: 14rem; height: 18rem;">
-                   <a href="">
-                        <img class="card-img-top" [src]="data.imageUrl" class="objectFit"
-                        [alt]="data.finalCategoryId" [title]="data.finalCategoryId" height="18rem">
-                   </a>
-                   <div class="card-body">
-                   <p class="card-text text-center" style="font-size: 18px;font-weight: bolder;font-family: Georgia, 'Times New Roman', Times, serif;">
-                        {{data.finalCategoryName}}  
-                   </p>
-                   </div>
-              </div>
-           </ng-template>
-         </ng-container>
-       </owl-carousel-o>
-</div>    -->
+     <div >
+          <h3 class="text-center font-weight-bolder popularC">
+               <span class=" px-2 py-2">POPULAR CATEGORY</span>
+          </h3>
+     </div>
+    
+          <div  class="border-primary row">    
 
+               <div  *ngFor="let data of finalCategoryData; let i = index" class="col-md-2 mb-3 borderRadius10" >
 
-
-<div class="container" style="max-width: 1280px;">
-     <h3 class="text-center font-weight-bolder mt-2 mb-2">POPULAR CATEGORY</h3>
-          <div  class="border-primary mt-3 row">     
-
-               <div  *ngFor="let data of finalCategoryData; let i = index" class="col-md-2 mt-3 borderRadius10" >
-
-                   <div class="card border-0 mt-3 ml-2" >
+                   <div class="card border-0 mt-3 ml-2 borderRadius10">
                       <a [routerLink]="'/p/'+data.finalCategoryName">
-                          <img class="card-img-top objectFit"  src="{{data.imageUrl}}" style="width: auto;height: 200px;" alt="Card image cap" >
+                          <img class="card-img-top objectFit borderFC"  src="{{data.imageUrl}}" style="height: 200px;" alt="Card image cap" >
                        </a>
                         <div class="card-body">
-                          <p class="card-text text-center" style="font-size: 18px;font-weight: bolder;font-family: Georgia, 'Times New Roman', Times, serif;">
-                                                  {{data.finalCategoryName}}  
+                          <p class="card-text text-center" >
+                              <span class="fcn">
+                                   {{data.finalCategoryName}} 
+                               </span>                   
                             </p>
                       </div>
                    </div>
