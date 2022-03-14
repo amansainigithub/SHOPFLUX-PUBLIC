@@ -23,7 +23,7 @@ export class TopBannerComponent implements OnInit {
   }
 
   public customOptions: any = {
-    loop: false,
+    loop: true,
     mouseDrag: true,
     touchDrag: true,
     pullDrag: false,

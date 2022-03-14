@@ -1,11 +1,10 @@
 import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, NavigationEnd, NavigationStart, Router } from '@angular/router';
 import { AppComponent } from 'src/app/app.component';
 import { SnackbarHelperService } from 'src/app/helper-msg/snackbar-helper.service';
 import { ProductService } from 'src/app/pb_services/product_service/product.service';
 import { UserService } from 'src/app/_services/user.service';
-import { CartPageComponent } from '../../cart/cart-page/cart-page.component';
 
 @Component({
   selector: 'app-product-details',
@@ -19,7 +18,7 @@ export class ProductDetailsComponent implements OnInit {
               private _activateRoute:ActivatedRoute,
               private appCom:AppComponent,
               private router:Router,
-              private _snackbar_helper:SnackbarHelperService
+              private _snackbar_helper:SnackbarHelperService,
              ) { }
 
   productId:any;
@@ -38,7 +37,19 @@ export class ProductDetailsComponent implements OnInit {
   //THUMBNAIL var
   thumbnailUrl:any;
 
+  private lastPoppedUrl:any;
+  private yScrollStack: number[] = [];
+
+
   ngOnInit(): void {
+
+    this.router.events.subscribe((event) => {
+      // if (!(event instanceof NavigationEnd)) {
+      //     return;
+      // }
+      window.scrollTo(0, 0)
+  });
+
     this.productName = this._activateRoute.snapshot.params.productName;
      this.productId = this._activateRoute.snapshot.params.productId;
     // console.log(this.productName);
@@ -46,6 +57,8 @@ export class ProductDetailsComponent implements OnInit {
 
     //calling PRODUCT BY ID
     this.getProductDetailsById();
+
+    
 
   }
 
@@ -69,9 +82,6 @@ export class ProductDetailsComponent implements OnInit {
 
          //CALLING LIST BY FINAL-CATEGORY-ID
          this.getMoreProductByFinalCategoryId(data.finalCategoryId);
-
-
-       
          
         },
         error=>{
@@ -84,6 +94,7 @@ export class ProductDetailsComponent implements OnInit {
 
   getProductDetailsByIdClicking(productId:any)
   { 
+
     //StART Progrss Bar
     this.progressBar_Starting();
 
@@ -117,9 +128,9 @@ export class ProductDetailsComponent implements OnInit {
       )
   }
 
-  scroll(el: HTMLElement) {
-    el.scrollIntoView({behavior: 'smooth'});
-}
+//   scroll(el: HTMLElement) {
+//     el.scrollIntoView({behavior: 'smooth'});
+// }
 
   getMoreProductByFinalCategoryId(finalCategoryId:any)
   {

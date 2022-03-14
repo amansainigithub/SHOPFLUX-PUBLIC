@@ -19,11 +19,14 @@ export class CategoryNavbarComponent implements OnInit {
       this.productService.getFinalCategoryList().subscribe(
         data=>{
             this.finalCategoryData=data;
-            console.log("***************TEST****************");
-            
         },error=>{
             console.log(error);
         }
       )
+  }
+
+  getfinalCategoryList()
+  {
+    return this.finalCategoryData;
   }
 }

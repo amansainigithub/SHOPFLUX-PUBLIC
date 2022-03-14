@@ -1,0 +1,51 @@
+.pdname
+{
+    /* font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; */
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+}
+
+.prColor
+{
+    color: #707B7C;
+}
+
+.imgOverlay
+{
+    background-color: #6495ED;
+    padding: 13px;
+    color: white;
+    border-radius: 50%;
+
+}
+
+.popularC
+{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 17px;
+    font-weight: 400;
+    
+}
+
+.mrpPrice
+{
+    font-size: 13px;
+}
+
+.aProductName
+{
+    text-decoration: none;
+    color: #464440;
+}
+
+.adtcolor
+{
+    color: #DE3163;
+}
+
+.popularC
+{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 17px;
+    font-weight: 400;
+    
+}

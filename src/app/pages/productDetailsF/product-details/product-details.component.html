@@ -4,11 +4,13 @@
    </div>
    <!-- PROGRESS BAR  !-->
 
-   <div  #target>
+   <!-- <div  #target> -->
 
-  
+  <div style="background-color: white;">
 
-<div class="container" style="max-width: 1320px;">
+   
+
+<div class="container pt-5" style="max-width: 1320px;background-color: white;">
 
     <div class="row">
 
@@ -17,13 +19,21 @@
                 <div (click)="changFileUrl(fileData.fileUrl)" class="cursor-pointer">
                     <img class="card-img-top" src="{{fileData.fileUrl}}" alt="Card image cap">
                 </div>
-              </div>
+            </div>
         </div>
 
 
         <div class="col-md-5">
-            <div class="card object-fit" style="width: 22rem; height: 30rem;">
+            <div class="card object-fit" style="width: 26rem;">
                 <img class="card-img-top" src="{{thumbnailUrl}}" alt="Card image cap">
+
+                <a [routerLink]="'/pd/'+node.productName+'/'+node.productId">
+                  <div class="card-img-overlay ">
+                    <span class="imgOverlay ">
+                      {{node.savePrice}}%
+                    </span>
+                  </div>
+                 </a>
               </div>
         </div>
 
@@ -31,23 +41,29 @@
 
         <div class="col-md-4">
            <div class="card border-0 mt-2" >
-            <h1>{{node.productName}}</h1>
 
-            <hr>
+            <!-- PRODUCT NAME -->
+            <h1 class="pdname">{{node.productName}}</h1>
 
-                <h2>
+                <p>
+                    <span class="prColor"> Price : </span> 
                      <i class="fa fa-inr" style="font-size:13px"></i>
-                     {{node.sellPrice}}
-               </h2>
+                    <span style="font-size: 18px;"> {{node.sellPrice}}</span>
+                    <span class="mx-1">(Inclusive of all taxes)</span>
+                </p>
 
-               <button type="button" class="btn btn-primary mb-2" (click)="addToCart(node.productId,node.productName,node.thumbnailUrl,node.sellPrice)">Add To Cart</button>
-               <button type="button" class="btn btn-warning" >Buy Now</button>
+               <button type="button" 
+                        class="btn btn-warning borderRadius20"  
+                        (click)="addToCart(node.productId,node.productName,node.thumbnailUrl,node.sellPrice)">
+                        Add To Cart
+              </button>
+               <!-- <button type="button" class="btn btn-warning" >Buy Now</button> -->
 
            </div>
         </div>
 
         <div class="col-md-2">
-            <p>ROW-3</p>
+            <!-- <p>ROW-3</p> -->
         </div>
     
     </div>
@@ -57,24 +73,67 @@
 
 
     <!-- MORE PRODUCT SATRTING-->
-<div class="container">
+<div class="container pb-5 mt-5" >
 
     <h3 class="text-center text-success ">BRANDED PRODUCTS</h3>
 
-    <div class="row mt-5">
+    <div class="row">
 
-        <div class="col-sm-2"  *ngFor="let node of moreProduct; let i = index" >
-            <mat-card class="example-card">
+        <div class="col-sm-3 mt-5"  *ngFor="let node of moreProduct; let i = index" >
+            <mat-card class="example-card ">
 
                <!-- <a [routerLink]="'/pd/'+node.productName+'/'+node.productId"> -->
-                <a (click)="getProductDetailsByIdClicking(node.productId)" (click)="scroll(target)" [routerLink]="'/pd/'+node.productName+'/'+node.productId" >
+                <a 
+                (click)="getProductDetailsByIdClicking(node.productId)" 
+                 [routerLink]="'/pd/'+node.productName+'/'+node.productId" >
                  <img mat-card-image src="{{node.thumbnailUrl}}" height="210" class="objectFit" alt="Photo of a Shiba Inu">
                </a>
 
-                <mat-card-actions>
-                    <button mat-raised-button color="primary"  (click)="addToCart(node.productId,node.productName,node.thumbnailUrl,node.sellPrice)">
+               <a 
+               (click)="getProductDetailsByIdClicking(node.productId)"
+               [routerLink]="'/pd/'+node.productName+'/'+node.productId" 
+                >
+                <div class="card-img-overlay ">
+                  <span class="imgOverlay ">
+                    {{node.savePrice}}%
+                  </span>
+                </div>
+               </a>
+
+                <mat-card-actions >
+
+                    <div class="card-body p-2 text-center ">
+                        <a  class="aProductName" [routerLink]="'/pd/'+node.productName+'/'+node.productId">
+                          <p>
+                            {{node.productName}}
+                          </p>
+                        </a>
+
+                        <p class="card-text text-center">
+                            <span>
+                               <span class="whitesmoke ">  M.R.P : </span>
+                              <i class="fa fa-rupee font-weight-bold"></i>
+                              <span class="sellp"> {{node.sellPrice}}  </span>
+                            </span>
+  
+                            <span class="mx-1">
+                                <s>  <i class="fa fa-rupee" style="font-size: 12px;" ></i>
+                                 <span class="mrpPrice">  {{node.mrpPrice}}</span>
+                               </s>
+                            </span>
+                        </p>
+
+                    </div>
+
+                    <div class="text-center">
+                        <button 
+                         mat-raised-button class="adtcolor"  
+                            (click)="addToCart(node.productId,node.productName,node.thumbnailUrl,node.sellPrice)">
+                        <i class="fa fa-shopping-cart"></i>
                         Add To Cart
                     </button>
+                    </div>
+
                 </mat-card-actions>
 
             </mat-card>
@@ -84,8 +143,9 @@
     </div>
 </div>
 
-
 </div>
+<!-- 
+</div> -->
     <!-- MORE PRODUCT ENDING !!-->
 
 

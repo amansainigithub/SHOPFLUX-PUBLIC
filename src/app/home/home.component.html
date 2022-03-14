@@ -1,21 +1,16 @@
- <div   *ngIf="progressBar.dynamicValue" >
+<div   *ngIf="progressBar.dynamicValue" >
       <mat-progress-bar mode="indeterminate"></mat-progress-bar>
  </div>
 
+
  
- <app-category-navbar></app-category-navbar>
-<app-top-banner></app-top-banner>
-<app-final-category-banner></app-final-category-banner>
-<app-product-random-banner></app-product-random-banner>
-
-
-    <div class="container mb-5 p-5">
-     <app-testing></app-testing>
-    </div>
-
-
-
-
-
-    
-    
+ <div class="whitesmoke">
+      <app-category-navbar></app-category-navbar>
+      <app-top-banner></app-top-banner>
+      <app-final-category-banner></app-final-category-banner>
+      
+      <div class="mt-4"> 
+            <img src="../../assets/Home-images/image-1.jpg" class="objectFit" width="100%"  height="200px" alt="">
+      </div>
+      <app-product-random-banner></app-product-random-banner>
+ </div>

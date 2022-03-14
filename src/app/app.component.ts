@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { NavigationEnd, Router } from '@angular/router';
 import { AuthURLService } from './helper-msg/auth-url.service';
 import { ProductDetailsComponent } from './pages/productDetailsF/product-details/product-details.component';
 import { ProductService } from './pb_services/product_service/product.service';
@@ -23,25 +23,36 @@ export class AppComponent implements OnInit {
               private _router:Router,
               private http: HttpClient,
               private _AUTH_URL_SERVICE:AuthURLService,
+              private ps:ProductService
               ) {
    }
 
    userName:any;
+   finalCategoryData:any;
    
 
   ngOnInit(): void {
+
+    //MOVE TO SCROLL UP
+    this._router.events.subscribe((event) => {
+      // if (!(event instanceof NavigationEnd)) {
+      //     return;
+      // }
+      window.scrollTo(0, 0)
+  });
 
     if(this.tokenStorageService.getToken == null)
     {
       this._router.navigateByUrl("/login");
     }
 
+    //get cart length
    this. getCartLength();
 
+  //  Get user Name
    this.getUserName();
 
-
-
+   this.finalCategoryData = this.getFinalCategoryList();
 
     // this.isLoggedIn = !!this.tokenStorageService.getToken();
     // if (this.isLoggedIn) {
@@ -56,7 +67,6 @@ export class AppComponent implements OnInit {
   logout(): void {
     this.tokenStorageService.signOut();
     this._router.navigateByUrl("/login")
-    
   }
 
  
@@ -76,6 +86,18 @@ badgeContent:any;
     this.userName =  this.tokenStorageService.getUserName();
    }
 
+
+   getFinalCategoryList()
+   {
+       this.ps.getFinalCategoryList().subscribe(
+         data=>{
+             this.finalCategoryData=data;
+         },error=>{
+             console.log(error);
+         }
+       )
+   }
+ 
 
  
 

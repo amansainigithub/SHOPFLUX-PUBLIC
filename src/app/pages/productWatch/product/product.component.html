@@ -16,12 +16,12 @@
 
             <h1>NINE [9] </h1>
 
-            <div>
+            <!-- <div>
                      <div  class="border-primary mt-3 row">     
            
                           <div  *ngFor="let data of productList; let i = index" class="col-md-4 mt-3 borderRadius10" >
            
-                              <div class="card border-0 mt-3 ml-2" style="width: 14rem; min-height: 19rem;">
+                              <div class="card border-0 mt-3 ml-2" style="max-width: 15rem;">
                                  <a [routerLink]="'/pd/'+data.productName+'/'+data.productId">
                                      <img class="card-img-top objectFit"  src="{{data.thumbnailUrl}}" style="width: auto;height: 200px;"  alt="Card image cap" >
                                   </a>
@@ -34,7 +34,70 @@
            
                           </div>
                      </div>    
-             </div>
+             </div> -->
+
+             <div class="row pb-4">
+
+               <div class="col-sm-4 mt-2" *ngFor="let data of productList; let i = index">
+                   <div class="card mt-3 borderRadius8 p-2" style="max-width: 17rem;">
+       
+                       <div class="text-center">
+                           <a  [routerLink]="'/pd/'+data.productName+'/'+data.productId">
+                               <img class="card-img-top" style="border-radius: 8px;" 
+                               [src]="data.thumbnailUrl" 
+                               class="objectFit"
+                               [alt]="data.productId" 
+                               [title]="data.productId"
+                               height="220px">
+                          </a>
+                       </div>
+       
+                      <a [routerLink]="'/pd/'+data.productName+'/'+data.productId">
+                       <div class="card-img-overlay ">
+                         <span class="imgOverlay ">
+                           {{data.savePrice}}%
+                         </span>
+                       </div>
+                      </a>
+       
+                         <div class="card-body p-2 text-center">
+                           <a  class="aProductName" [routerLink]="'/pd/'+data.productName+'/'+data.productId">
+                             <p>
+                               {{data.productName}}
+                             </p>
+                           </a>
+       
+                             <p class="card-text text-center">
+                                 <span>
+                                    <span class="whitesmoke ">  M.R.P : </span>
+                                   <i class="fa fa-rupee font-weight-bold"></i>
+                                   <span class="sellp"> {{data.sellPrice}}  </span>
+                                 </span>
+       
+                                 <span class="mx-1">
+                                     <s>  <i class="fa fa-rupee" style="font-size: 12px;" ></i>
+                                      <span class="mrpPrice">  {{data.mrpPrice}}</span>
+                                    </s>
+                                 </span>
+                             </p>
+                         </div>
+                           
+                         <div class="text-center">
+                             <button  mat-raised-button class="adtcolor"
+                               (click)="addToCart(data.productId,data.productName,data.thumbnailUrl,data.sellPrice)">
+                               <i class="fa fa-shopping-cart"></i>
+                               Add To Cart
+                           </button>
+                         </div>
+       
+                  </div>
+       
+               </div>
+       
+           </div>
+
+
+
 
 
          </div>
