@@ -12,7 +12,7 @@
                <div  *ngFor="let data of finalCategoryData; let i = index" class="col-md-2 mb-3 borderRadius10" >
 
                    <div class="card border-0 mt-3 ml-2 borderRadius10">
-                      <a [routerLink]="'/p/'+data.finalCategoryName">
+                      <a [routerLink]="'/p/'+data.finalCategoryName" class="imgHover">
                           <img class="card-img-top objectFit borderFC"  src="{{data.imageUrl}}" style="height: 200px;" alt="Card image cap" >
                        </a>
                         <div class="card-body">

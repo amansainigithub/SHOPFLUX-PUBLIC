@@ -16,26 +16,6 @@
 
             <h1>NINE [9] </h1>
 
-            <!-- <div>
-                     <div  class="border-primary mt-3 row">     
-           
-                          <div  *ngFor="let data of productList; let i = index" class="col-md-4 mt-3 borderRadius10" >
-           
-                              <div class="card border-0 mt-3 ml-2" style="max-width: 15rem;">
-                                 <a [routerLink]="'/pd/'+data.productName+'/'+data.productId">
-                                     <img class="card-img-top objectFit"  src="{{data.thumbnailUrl}}" style="width: auto;height: 200px;"  alt="Card image cap" >
-                                  </a>
-                                   <div class="card-body">
-                                     <p class="card-text text-center">
-                                                             {{data.productName}}  
-                                       </p>
-                                 </div>
-                              </div>
-           
-                          </div>
-                     </div>    
-             </div> -->
-
              <div class="row pb-4">
 
                <div class="col-sm-4 mt-2" *ngFor="let data of productList; let i = index">
@@ -82,13 +62,13 @@
                              </p>
                          </div>
                            
-                         <div class="text-center">
+                         <!-- <div class="text-center">
                              <button  mat-raised-button class="adtcolor"
                                (click)="addToCart(data.productId,data.productName,data.thumbnailUrl,data.sellPrice)">
                                <i class="fa fa-shopping-cart"></i>
                                Add To Cart
                            </button>
-                         </div>
+                         </div> -->
        
                   </div>
        

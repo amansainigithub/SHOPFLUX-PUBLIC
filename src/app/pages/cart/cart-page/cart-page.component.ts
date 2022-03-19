@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AppComponent } from 'src/app/app.component';
+import { SnackbarHelperService } from 'src/app/helper-msg/snackbar-helper.service';
 import { CartService } from 'src/app/pb_services/cart_service/cart.service';
 import { WindowRefService } from 'src/app/pb_services/winref/window-ref.service';
 import { TokenStorageService } from 'src/app/_services/token-storage.service';
@@ -21,6 +22,7 @@ export class CartPageComponent implements OnInit {
               private router: Router,
               private cartService:CartService,
               private windowref:WindowRefService,
+              private _snackbar_helper:SnackbarHelperService,
               private routes:Router
 
              ) { }
@@ -76,7 +78,6 @@ getCartPriceSummary()
   //  console.log(this.totalMrp);
     
   }
-  //  console.log(this.totalMrp);
 }
 
 //******************************************************************************************** */
@@ -228,6 +229,44 @@ public  addressAssignToGlobal():any
      console.log(error);
   }) 
   
+}
+
+
+increaseProductQuantity(e:any, productId:any)
+{
+    let cart = JSON.parse(localStorage.getItem('cart') || '{}' );
+    for(var item in cart){
+     
+          var singleNode = cart[item];
+
+            if(productId == singleNode.productId)
+            {
+              if(singleNode.productQuantity ! = e.target.value)
+              {
+              singleNode.productQuantity = e.target.value;
+
+              this._snackbar_helper.
+              OpenSnackbar_verticalPosition_top_right("Quantity Increase", "",1000);
+            }
+            else
+            {
+              console.log("ELSE");
+            }
+          }
+     
+  }
+localStorage.setItem("cart",JSON.stringify(cart));
+
+  // //call cart length
+  this.getCartList();
+
+  // //call to cart
+  this.appCom.getCartLength();
+
+  // //calling price summary
+  this.getCartPriceSummary();
+    
+    
 }
 
 

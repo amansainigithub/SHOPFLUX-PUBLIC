@@ -1,0 +1,72 @@
+<div class="col-md-12" style="height: 600px;">
+
+    <div *ngIf="regSuccess == 'N'" class="container text-center ">
+        
+        <div class="align-items-center">
+
+            <div class="card borderRadius8">
+                <div class="card-body">
+        
+                  <h4 class="card-title text-primary">OTP-VERIFY</h4>
+                  <hr>
+
+                  <form   (ngSubmit)="otpVerify()">
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">Please Enter OTP</label>
+                      <input type="text" 
+                      class="form-control" 
+                      name="otp"
+                      maxlength="7"
+                      [(ngModel)]="otpVerifierForm.otp"
+                      id="exampleInputEmail1" 
+                       placeholder="Enter OTP">
+                     
+                    </div>
+
+                    <div  *ngIf="btnLocked == 'N'">
+                        <button type="submit" class="btn btn-primary btn-sm">OTP-VERIFY</button>
+                    </div>
+
+                    <div *ngIf="btnLocked == 'Y'" class="form-group">
+                        <button disabled class="btn btn-primary btn-block">
+                          <span>Please Wait... </span>
+                          <i class="fa fa-circle-o-notch fa-spin"></i>
+                        </button>
+                      </div>
+
+                      <div *ngIf="warningMessage == 'Y'" class="mt-2" >
+                        <div class="alert alert-warning" role="alert">
+                            <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
+                            Please Enter Valid OTP
+                          </div>
+                      </div>
+                  
+                </form>
+        
+                </div>
+              </div>
+
+        </div>
+        
+    </div>
+
+
+    <div class="mt-5">
+        <div *ngIf="regSuccess == 'Y'">
+            <div class="text-center">
+
+                <img src=".../../../../assets/Home-images/ck1.png" height="100" width="100" alt="">
+            </div>
+
+            <div class="text-center mt-3">
+                <h2 class="rs">Registeration Successfully</h2>
+
+                <button routerLink="/login" class="btn btn-warning">
+                    <span >Login Here</span>
+                </button>
+
+            </div>
+        </div>
+    </div>
+
+</div>

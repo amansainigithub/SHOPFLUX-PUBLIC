@@ -28,7 +28,9 @@ export class LoginComponent implements OnInit {
   constructor(private authService: AuthService, 
     public tokenStorage: TokenStorageService,
     private _router:Router,
-    private appComm:AppComponent) { }
+    private appComm:AppComponent,
+    
+    ) { }
 
   ngOnInit(): void {
     if (this.tokenStorage.getToken()) {
@@ -42,8 +44,16 @@ export class LoginComponent implements OnInit {
   
     const { username, password } = this.form;
     this.authService.login(username, password).subscribe(
-      data => {
-        
+      (data:any) => {
+
+        if(data.status == 'false')
+        {
+          alert("please check email");  
+           //Stop Progrss Bar
+         this.progressBar_Stop(); 
+          return;
+        }
+
         this.tokenStorage.saveToken(data.accessToken);
         this.tokenStorage.saveUser(data);
         this._router.navigateByUrl("/");

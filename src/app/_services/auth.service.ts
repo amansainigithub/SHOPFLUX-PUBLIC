@@ -30,4 +30,12 @@ export class AuthService {
     }, httpOptions);
     
   }
+
+  otpVerifyService(otpVerifyForm:any)
+  {
+      return this.http.post(AUTH_API+'otpVerify',otpVerifyForm);
+  }
+
+
+  
 }

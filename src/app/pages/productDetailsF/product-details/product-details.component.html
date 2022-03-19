@@ -52,12 +52,95 @@
                     <span class="mx-1">(Inclusive of all taxes)</span>
                 </p>
 
-               <button type="button" 
-                        class="btn btn-warning borderRadius20"  
+
+                <!-- IF QUANTITY ZERO OR NULL -->
+              <div *ngIf=" node.quantity == 0 || node.quantity == null " >
+                <div class="alert alert alert-warning" role="alert">
+                    Product Finish !!
+                  </div>
+              </div>
+
+               <!-- IF QUANTITY 10 (TEN)-->
+              <div *ngIf="10 > node.quantity && node.quantity != 0" >
+                <p class="text-success fontsize11" >In Stock</p>
+                <div class="alert alert alert-warning" role="alert">
+                    Hurry ! Few Orders are Left
+                  </div>
+
+                   <table class="mb-3 mt-2">
+                  <tr *ngIf="productColorSizeSelector == null ">
+                    <th *ngFor="let size of node.productSizeSetForProductForms; let i = index">
+                      <button 
+                        (click)="colorSelector(size.productSize)"
+                        class="btn btn-light bg-white p-3 px-4 mr-2 border border-1  ">
+                        {{size.productSize}}
+                    </button>
+                    </th>
+                  </tr>
+
+                  <tr *ngIf="productColorSizeSelector != null ">
+                    <th *ngFor="let size of node.productSizeSetForProductForms; let i = index">
+                      <button *ngIf="size.productSize == productColorSizeSelector"
+                        (click)="colorSelector(size.productSize)"
+                        class="btn p-3 px-4 mr-2 border border-1 bg-dark text-white">
+                        {{size.productSize}}
+                    </button>
+                    <button *ngIf="size.productSize != productColorSizeSelector"
+                        (click)="colorSelector(size.productSize)"
+                        class="btn p-3 px-4 mr-2 border border-1">
+                        {{size.productSize}}
+                    </button>
+                    </th>
+                  </tr>
+               </table>
+
+                <button type="button" 
+                        class="btn btn-warning borderRadius20 btn-block mt-1"  
                         (click)="addToCart(node.productId,node.productName,node.thumbnailUrl,node.sellPrice)">
                         Add To Cart
-              </button>
-               <!-- <button type="button" class="btn btn-warning" >Buy Now</button> -->
+               </button> 
+              </div>
+
+               <!-- IF QUANTITY GREATER THAN 10 (Ten) -->
+              <div *ngIf="node.quantity > 10" >
+
+                <table class="mb-3 mt-2">
+                  <tr *ngIf="productColorSizeSelector == null ">
+                    <th *ngFor="let size of node.productSizeSetForProductForms; let i = index">
+                      <button 
+                        (click)="colorSelector(size.productSize)"
+                        class="btn btn-light bg-white p-3 px-4 mr-2 border border-1  ">
+                        {{size.productSize}}
+                    </button>
+                    </th>
+                  </tr>
+
+                  <tr *ngIf="productColorSizeSelector != null ">
+                    <th *ngFor="let size of node.productSizeSetForProductForms; let i = index">
+                      <button *ngIf="size.productSize == productColorSizeSelector"
+                        (click)="colorSelector(size.productSize)"
+                        class="btn p-3 px-4 mr-2 border border-1 bg-dark text-white">
+                        {{size.productSize}}
+                    </button>
+                    <button *ngIf="size.productSize != productColorSizeSelector"
+                        (click)="colorSelector(size.productSize)"
+                        class="btn p-3 px-4 mr-2 border border-1">
+                        {{size.productSize}}
+                    </button>
+                    </th>
+                  </tr>
+               </table>
+
+
+                <button type="button" 
+                        class="btn btn-warning borderRadius20 btn-block"  
+                        (click)="addToCart(node.productId,node.productName,node.thumbnailUrl,node.sellPrice)">
+                        Add To Cart
+                </button> 
+
+               
+
+              </div>
 
            </div>
         </div>
@@ -125,14 +208,14 @@
 
                     </div>
 
-                    <div class="text-center">
+                    <!-- <div class="text-center">
                         <button 
                          mat-raised-button class="adtcolor"  
                             (click)="addToCart(node.productId,node.productName,node.thumbnailUrl,node.sellPrice)">
                         <i class="fa fa-shopping-cart"></i>
                         Add To Cart
                     </button>
-                    </div>
+                    </div> -->
 
                 </mat-card-actions>
 

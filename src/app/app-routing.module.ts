@@ -17,6 +17,7 @@ import { CartPageComponent } from './pages/cart/cart-page/cart-page.component';
 import { UserAddressFormComponent } from './pages/addressForm/user-address-form/user-address-form.component';
 import { PaymentSuccessComponent } from './pages/paymentSuccess/payment-success/payment-success.component';
 import { UserOrderComponent } from './pages/dashboard/user-Order/user-order/user-order.component';
+import { OtpVarifierComponent } from './otp-varifier/otp-varifier.component';
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'home', component: HomeComponent },
@@ -31,6 +32,7 @@ const routes: Routes = [
   { path: 'cart', component: CartPageComponent },
   { path: 'testing', component: TestingComponent },
   { path: 'payment-success', component: PaymentSuccessComponent },
+  { path: 'verify-otp/:email', component: OtpVarifierComponent },
 
   { path: 'dashboard',canActivate:[AuthLoginGuard], 
   children: [

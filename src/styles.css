@@ -37,6 +37,12 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     border-radius: 4px;
 }
 
+.borderRadius5
+{
+    border-radius: 5px;
+}
+
+
 .borderRadius6
 {
     border-radius: 6px;
@@ -61,3 +67,94 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 {
     border-radius: 10px;
 }
+
+.borderRadius40
+{
+    border-radius: 40px;
+}
+
+.borderRadius50
+{
+    border-radius: 50px;
+}
+
+.fontsize6
+{
+    font-size: 8px;
+}
+.fontsize7
+{
+    font-size: 8px;
+}
+.fontsize8
+{
+    font-size: 8px;
+}
+
+.fontsize10
+{
+    font-size: 10px;
+}
+
+.fontsize
+{
+    font-size: 11px;
+}
+
+.fontsize12
+{
+    font-size: 12px;
+}
+
+.fontsize13
+{
+    font-size: 13px;
+}
+
+.fontsize14
+{
+    font-size: 14px;
+}
+
+.fontsize15
+{
+    font-size: 15px;
+}
+.fontsize16
+{
+    font-size: 16px;
+}
+.fontsize17
+{
+    font-size: 17px;
+}
+.fontsize18
+{
+    font-size: 18px;
+}
+.fontsize19
+{
+    font-size: 19px;
+}
+.fontsize20
+{
+    font-size: 20px;
+}
+
+.imgHover {
+    overflow: hidden;
+}
+
+.imgHover img {
+    transition: 0.2s all ease-in-out;
+}
+
+.imgHover:hover img {
+    transform: scale(1.2);
+}
+
+/* .navbarFixed{
+    position: fixed;
+    width: 100%;
+    z-index: 999999999999999999999999999999999999999999999999999999;
+  } */

@@ -12,8 +12,8 @@
           <ng-template carouselSlide [id]="data.productId">
 
              <div class="card mt-3 borderRadius8" style="max-width: 15rem; height: 21rem;">
-                  <a  [routerLink]="'/pd/'+data.productName+'/'+data.productId">
-                       <img class="card-img-top" style="border-radius: 8px;" 
+                  <a  class="imgHover"   [routerLink]="'/pd/'+data.productName+'/'+data.productId" >
+                       <img class="card-img-top "  style="border-radius: 8px;" 
                        [src]="data.thumbnailUrl" 
                        class="objectFit"
                        [alt]="data.productId" 

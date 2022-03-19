@@ -40,6 +40,7 @@ import {MatMenuModule} from '@angular/material/menu';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
 import { CategoryNavbarComponent } from './pages/homeDesign/category-navbar/category-navbar.component';
+import { OtpVarifierComponent } from './otp-varifier/otp-varifier.component';
 
 
 
@@ -67,6 +68,7 @@ import { CategoryNavbarComponent } from './pages/homeDesign/category-navbar/cate
     UserOrderComponent,
     OrderSidebarComponent,
     CategoryNavbarComponent,
+    OtpVarifierComponent,
     
     
     

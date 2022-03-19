@@ -27,13 +27,12 @@ export class ProductDetailsComponent implements OnInit {
   productFiles:any;
   finalCategory:any;
   moreProduct:any;
+  productColorSizeSelector:any=null;
 
   // PROGRESS BAR
   progressBar:any ={
     dynamicValue:false
   }
-
-
   //THUMBNAIL var
   thumbnailUrl:any;
 
@@ -69,9 +68,12 @@ export class ProductDetailsComponent implements OnInit {
         (data:any) =>{
           //PRODUCT DATA
          this.node=data;
+          console.log(this.node);
+          
+
          this.finalCategory = data.finalCategoryId;
-        //  console.log(this.node);
-         console.log(data.finalCategoryId);
+          console.log(this.node);
+        // console.log(data.finalCategoryId);
          
             
          //PRODUCT FILE URLS
@@ -164,7 +166,8 @@ export class ProductDetailsComponent implements OnInit {
     "productName":"",
     "url":"",
     "productQuantity":1,
-    "productPrice":""
+    "productPrice":"",
+    "productSize":""
   }
 
 
@@ -173,10 +176,19 @@ export class ProductDetailsComponent implements OnInit {
       // console.log(productId);
       // console.log(productName);
 
+      if(this.productColorSizeSelector == null  || this.productColorSizeSelector == undefined)
+      {
+        this._snackbar_helper.
+         OpenSnackbar_verticalPosition_top_right("Please Select Size", "",2000);
+         return;
+      }
+
+
       this.cartObject.productId = productId;
       this.cartObject.productName = productName;
       this.cartObject.url = url;
       this.cartObject.productPrice = productPrice;
+      this.cartObject.productSize = this.productColorSizeSelector;
 
       console.log("***********************");
       //console.log(this.cartList);
@@ -238,6 +250,14 @@ export class ProductDetailsComponent implements OnInit {
 
 
 
+  //COLOR SELECTOR
+  colorSelector(productSize:any)
+  {
+    this.productColorSizeSelector = productSize;
+  }
+
+
+
   progressBar_Starting()
   {
     this.progressBar.dynamicValue=true;
@@ -247,6 +267,9 @@ export class ProductDetailsComponent implements OnInit {
   {
     this.progressBar.dynamicValue=false;
   }
+
+
+
 
 
 }
