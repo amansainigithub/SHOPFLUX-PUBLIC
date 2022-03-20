@@ -41,6 +41,7 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
 import { CategoryNavbarComponent } from './pages/homeDesign/category-navbar/category-navbar.component';
 import { OtpVarifierComponent } from './otp-varifier/otp-varifier.component';
+import { ForgetPasswordComponent } from './pages/forget-password/forget-password/forget-password.component';
 
 
 
@@ -69,6 +70,7 @@ import { OtpVarifierComponent } from './otp-varifier/otp-varifier.component';
     OrderSidebarComponent,
     CategoryNavbarComponent,
     OtpVarifierComponent,
+    ForgetPasswordComponent,
     
     
     

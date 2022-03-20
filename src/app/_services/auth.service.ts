@@ -36,6 +36,18 @@ export class AuthService {
       return this.http.post(AUTH_API+'otpVerify',otpVerifyForm);
   }
 
+  //For forget password
+   emailForgetPass(emailFP:any)
+  {
+      return this.http.post(AUTH_API+'emailValidator',emailFP);
+  }
+
+
+   //For forget password
+   changePasswordByEmailAndOtp(changePasswordForm:any)
+  {
+      return this.http.post(AUTH_API+'changePasswordByEmailAndOtp',changePasswordForm);
+  }
 
   
 }

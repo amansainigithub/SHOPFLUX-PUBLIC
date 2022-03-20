@@ -18,6 +18,7 @@ import { UserAddressFormComponent } from './pages/addressForm/user-address-form/
 import { PaymentSuccessComponent } from './pages/paymentSuccess/payment-success/payment-success.component';
 import { UserOrderComponent } from './pages/dashboard/user-Order/user-order/user-order.component';
 import { OtpVarifierComponent } from './otp-varifier/otp-varifier.component';
+import { ForgetPasswordComponent } from './pages/forget-password/forget-password/forget-password.component';
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'home', component: HomeComponent },
@@ -33,6 +34,7 @@ const routes: Routes = [
   { path: 'testing', component: TestingComponent },
   { path: 'payment-success', component: PaymentSuccessComponent },
   { path: 'verify-otp/:email', component: OtpVarifierComponent },
+  { path: 'forget-password', component: ForgetPasswordComponent },
 
   { path: 'dashboard',canActivate:[AuthLoginGuard], 
   children: [

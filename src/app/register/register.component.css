@@ -38,3 +38,26 @@ label {
   color: darkslategrey;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
+
+
+.card {
+  margin: 0 auto; /* Added */
+  float: none; /* Added */
+  width: 27rem;
+  border-radius: 15px;
+}
+
+
+/* Container holding the image and the text */
+.container-fluid {
+  position: relative;
+  color: black;
+}
+
+/* Centered text */
+.centered {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
