@@ -42,6 +42,7 @@ import {MatIconModule} from '@angular/material/icon';
 import { CategoryNavbarComponent } from './pages/homeDesign/category-navbar/category-navbar.component';
 import { OtpVarifierComponent } from './otp-varifier/otp-varifier.component';
 import { ForgetPasswordComponent } from './pages/forget-password/forget-password/forget-password.component';
+import { NgxUiLoaderHttpModule, NgxUiLoaderModule } from 'ngx-ui-loader';
 
 
 
@@ -94,7 +95,11 @@ import { ForgetPasswordComponent } from './pages/forget-password/forget-password
     MatBadgeModule,
     MatMenuModule,
     MatToolbarModule,
-    MatIconModule
+    MatIconModule,
+    NgxUiLoaderModule,
+    NgxUiLoaderHttpModule.forRoot({
+      showForeground:true
+    })
     
   ],
   providers: [authInterceptorProviders],
