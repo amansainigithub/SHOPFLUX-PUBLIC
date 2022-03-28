@@ -10,14 +10,14 @@
 
    
 
-<div class="container pt-5" style="max-width: 1320px;background-color: white;">
+<div class="container pt-5" style="background-color: white;">
 
     <div class="row">
 
         <div class="col-md-1">
-            <div class="card mb-1" *ngFor="let fileData of productFiles; let i = index" style="width: 4rem;">
+            <div class="card mb-1" *ngFor="let fileData of productFiles; let i = index" >
                 <div (click)="changFileUrl(fileData.fileUrl)" class="cursor-pointer">
-                    <img class="card-img-top" src="{{fileData.fileUrl}}" alt="Card image cap">
+                    <img class="card-img-top" src="{{fileData.fileUrl}}" height="80" width="auto" alt="Card image cap">
                 </div>
             </div>
         </div>

@@ -15,4 +15,11 @@ export class UpdateAddressService {
   }
 
 
+  getCurrentUserAddress(username:any)
+  {
+    return this.http.get(this._AUTH_URL_SERVICE.authUrl+"getCurrentUserAddress/"+username);
+    
+  }
+
+
 }

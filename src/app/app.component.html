@@ -44,10 +44,11 @@
         <span class="font-weight-bold text-dark"> Hello, {{userName}}</span>
       </a>
       <div class="dropdown-menu p-1" aria-labelledby="navbarDropdown">
-        <a class="dropdown-item" routerLink="/dashboard"> <i class="fa fa-tags" style="color: #6495ED;"></i> My Profile</a>
-        <a class="dropdown-item" routerLink="/dashboard/userOrder"> <i class="fa fa-tags" style="color: #6495ED;"></i> Order</a>
         <a class="dropdown-item" routerLink="/"><i class="fa fa-home" style="color: #FF7F50;"> </i> Home</a>
         <a class="dropdown-item"routerLink="/dashboard"><i class="fa fa-tachometer" style="color: #DE3163;" aria-hidden="true"></i> Dashboard</a>
+        <a class="dropdown-item" routerLink="/dashboard/user-profile"><i class="fa fa-user-circle"  style="color: #FFBF00;" aria-hidden="true"></i> My Profile</a>
+        <a class="dropdown-item" routerLink="/dashboard/userOrder"> <i class="fa fa-tags" style="color: #6495ED;"></i>Your Order</a>
+        
         <div class="dropdown-divider"></div>
         <a class="dropdown-item" href (click)="logout()"><i class="	fa fa-unlock-alt"></i> Logout</a>
       </div>

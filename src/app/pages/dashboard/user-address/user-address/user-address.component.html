@@ -1,0 +1,123 @@
+
+<div class="container mt-5 mb-5">
+    
+    <div class="row">
+
+
+        <div class="col-sm-6">
+            <img src="../../../../../assets/Proj-images/2.svg" width="auto" height="550px;" alt="">
+        </div>
+        
+        <div class="col-sm-6">
+
+            <h3 class="font-weight-bold">Update Address</h3>
+            <hr>
+          <div class="mt-4"> 
+
+              <!-- FORM START -->
+             <!-- form -->
+             <form  (ngSubmit)="updateAddress()">
+
+                <div class="form-row">
+                    <label class="mx-3 " class="labelColorAddress" >Address Line 1</label>
+                  <div class="col-md-12 mb-3">
+                    <input type="text" 
+                    class="form-control" 
+                    id="validationDefault01"
+                    name="addressLine1"
+                    [(ngModel)]="updateAddressObject.addressLine1"
+                    placeholder="Address Line 1" 
+                    required>
+                  </div>
+                </div>
+
+                <div class="form-row">
+                    <label class="mx-3" class="labelColorAddress" >Address Line 2</label>
+                    <div class="col-md-12 mb-3">
+                      <input type="text" 
+                      class="form-control" 
+                      id="validationDefault01" 
+                      name="addressLine2"
+                      [(ngModel)]="updateAddressObject.addressLine2"
+                      placeholder="Address Line 2"
+                       required>
+                    </div>
+                  </div>
+
+                        <div class="form-row">
+
+                        <div class="col-md-6 mb-3">
+                            <label for="validationDefault03" class="labelColorAddress">City</label>
+                            <input type="text" 
+                            class="form-control"
+                            name="city"    
+                            [(ngModel)]="updateAddressObject.city"
+                            id="validationDefault03" 
+                            placeholder="City" 
+                            required>
+                        </div>
+
+                        <div class="col-md-3 mb-3">
+                            <label for="validationDefault04" class="labelColorAddress">State</label>
+                            <input type="text" 
+                            class="form-control" 
+                            name="state"
+                            [(ngModel)]="updateAddressObject.state"
+                            id="validationDefault04" 
+                            placeholder="State" 
+                            required>
+                        </div>
+
+                        <div class="col-md-3 mb-3">
+                            <label for="validationDefault05" class="labelColorAddress">Zip</label>
+                            <input type="text" 
+                            class="form-control" 
+                            name="zipCode"
+                            [(ngModel)]="updateAddressObject.zipCode"
+                            id="validationDefault05" 
+                            placeholder="Zip" 
+                            required>
+                        </div>
+
+                        </div>
+
+                        <div class="form-row">
+                            <label class="mx-3" class="labelColorAddress" >Country</label>
+                            <div class="col-md-12 mb-3">
+                              <input type="text" 
+                              class="form-control" 
+                              id="validationDefault01" 
+                              name="country"
+                              [(ngModel)]="updateAddressObject.country"
+                              placeholder="country" 
+                              required>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <label class="mx-3" class="labelColorAddress" >mobile</label>
+                            <div class="col-md-12 mb-3">
+                              <input type="tel" 
+                              class="form-control" 
+                              id="validationDefault01" 
+                              name="mobile"
+                              [(ngModel)]="updateAddressObject.mobile"
+                              placeholder="+91 Mobile" 
+                              required>
+                            </div>
+                        </div>
+
+               <div class="text-center">
+                <button class="btn btn-primary btn-sm" type="submit">UPDATE ADDRESS</button>
+               </div>
+              </form>
+                <!-- forms END -->
+            <!-- FORM END -->
+
+          </div>
+
+        </div>
+
+    </div>
+
+</div>

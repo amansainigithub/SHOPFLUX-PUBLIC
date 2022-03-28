@@ -1,0 +1,122 @@
+
+<div class="container mt-5 mb-5">
+    
+    <div class="row">
+
+
+        <div class="col-sm-6">
+            <img src="../../../../../assets/Proj-images/3.svg" style="max-width: 550px;" height="550px;" alt="">
+        </div>
+        
+        <div class="col-sm-6">
+
+           <div class="text-center">
+            <i class="fa fa-user-circle-o" style="font-size:30px">
+                <h3>My Profile</h3>
+            </i>
+           </div>
+
+          <div class="mt-4"> 
+
+            <form  (ngSubmit)="updateUserProfile()">
+                <div class="form-row">
+
+                  <div class="col-md-12 mb-3">
+                    <label for="validationDefault01">UserName</label>
+                    <input type="text" 
+                    class="form-control" 
+                    id="validationDefault01" 
+                    name="username"
+                    [(ngModel)]="userData.username"
+                    placeholder="First name" 
+                    value="Mark"
+                    disabled
+                    required>
+                  </div>
+
+                </div>
+
+
+                <div class="form-row">
+                    <div class="col-md-8 mb-3">
+                      <label for="validationDefault03">Email</label>
+                      <input
+                       type="email" 
+                       class="form-control" 
+                       name="email"
+                       [(ngModel)]="userData.email"
+                       id="validationDefault03" 
+                       placeholder="Email" required disabled>
+                    </div>
+                  </div>
+
+                  <div class="form-row">
+                    <div class="col-md-8 mb-3">
+                      <label for="validationDefault03">Mobile</label>
+                      <input
+                       type="text" 
+                       class="form-control" 
+                       id="validationDefault03" 
+                       name="mobile"
+                       [(ngModel)]="userData.mobile"
+                       value="+91" 
+                       placeholder="Mobile" required>
+                    </div>
+                  </div>
+
+
+                
+
+                <div class="form-row">
+                    <div class="col-md-8 mb-3">
+                      <label for="validationDefault03">Change Password</label>
+                      <input 
+                      type="text" 
+                      class="form-control" 
+                      disabled 
+                      id="validationDefault03" 
+                      value="***********" 
+                      placeholder="*********" 
+                      required>
+                      <a routerLink="/dashboard/change-password" class="cursor-pointer">
+                        <p for="validationDefault03">Change Password</p>
+                      </a>
+                    </div>
+                  </div>
+
+                  <div class="form-check form-check-inline">
+                    <input 
+                    class="form-check-input" 
+                    type="radio" 
+                    name="gender"
+                    [(ngModel)]="userData.gender"
+                    id="inlineRadio1" 
+                    value="male">
+                    <label class="form-check-label" for="inlineRadio1">Male</label>
+                  </div>
+                  
+                  <div class="form-check form-check-inline">
+                    <input 
+                    class="form-check-input" 
+                    type="radio" 
+                    name="gender"
+                    [(ngModel)]="userData.gender"
+                    id="inlineRadio2" 
+                    value="Female">
+                    <label class="form-check-label" for="inlineRadio2">Female</label>
+                  </div>
+
+               
+                  <div class="text-center">
+                    <button type="submit" class="btn btn-dark btn-sm">Update Profile</button>
+                  </div>
+
+              </form>
+
+          </div>
+
+        </div>
+
+    </div>
+
+</div>

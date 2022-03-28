@@ -2,9 +2,9 @@
 
     <div class="row ">
 
-       <div class="col-sm-3">
+       <!-- <div class="col-sm-3">
         <app-order-sidebar></app-order-sidebar>
-       </div>
+       </div> -->
 
 
         <div class="col-sm-9">
@@ -16,99 +16,108 @@
                 </h3>
             </div>
 
-                <div *ngFor="let node of userOrder; let i = index" >
-                    <mat-card class="example-card">
-                        <mat-card-title-group>
-                        <!-- <mat-card-title></mat-card-title> -->
-                        <mat-card-subtitle>
-                            <a class="productName" [routerLink]="'/pd/'+node.productName+'/'+node.productId">
-                                <h4>{{node.productName}}</h4>
-                            </a>
-                        </mat-card-subtitle>
-                       
-                        <mat-card-subtitle>
-                            <i class="fa fa-inr font-weight-bold text-dark" aria-hidden="true"></i> 
-                            <span class="ml-2">{{node.productPrice}}</span>
-                        </mat-card-subtitle>
-
-                        <mat-card-subtitle>
-                            <i class="fa fa-tags font-weight-bold qColor"></i>
-                           <span class="ml-2"> {{node.productQuantity}} </span> 
-                        </mat-card-subtitle>
-                        
-                        <mat-card-subtitle >
-                            <i class="fa fa-lock font-weight-bold roColor"></i> 
-                           <span class="ml-2 whitesmoke p-2"> {{node.razorOrderId}}</span>
-                        </mat-card-subtitle>
-
-                        <mat-card-subtitle>
-                            <h5> <span class="font-weight-bold deliveryColor">STATUS</span> 
-                                <span class="ml-2 whitesmoke p-2 font-weight-bold">
-                                     {{node.status}} 
-                                     <i class="fa 	fa fa-check-circle font-weight-bold psColor"></i> 
-                                 </span>
-                            </h5>
-                        </mat-card-subtitle>
-
-                        <mat-card-subtitle *ngIf="node.deliveryDate != null">
-                            <h5> <span class="font-weight-bold deliveryColor">DELIVERY</span> 
-                                <span class="ml-2 whitesmoke p-2 font-weight-bold">
-                                     {{node.deliveryDate}}
-                                     <i class="	fa fa-truck font-weight-bold deliveryColor"></i> 
-                                 </span>
-                            </h5>
-                        </mat-card-subtitle>
-
-                        <mat-card-subtitle *ngIf="node.deliveryStatus == 'Y'">
-                            <h5> <span class="font-weight-bold deliveryColor">DELIVERY-STATUS</span> 
-                                <span class="ml-2 whitesmoke p-2 font-weight-bold">
-                                     <span>
-                                         Delivered At : {{node.address}} 
-                                         <i class="fa fa-check text-success"></i>
+                <div *ngIf="userOrder != null">
+                    <div *ngFor="let node of userOrder; let i = index" >
+                        <mat-card class="example-card mb-3">
+                            <mat-card-title-group>
+                            <!-- <mat-card-title></mat-card-title> -->
+                            <mat-card-subtitle>
+                                <a class="productName" [routerLink]="'/pd/'+node.productName+'/'+node.productId">
+                                    <h4>{{node.productName}}</h4>
+                                </a>
+                            </mat-card-subtitle>
+                           
+                            <mat-card-subtitle>
+                                <i class="fa fa-inr font-weight-bold text-dark" aria-hidden="true"></i> 
+                                <span class="ml-2">{{node.productPrice}}</span>
+                            </mat-card-subtitle>
+    
+                            <mat-card-subtitle>
+                                <i class="fa fa-tags font-weight-bold qColor"></i>
+                               <span class="ml-2"> {{node.productQuantity}} </span> 
+                            </mat-card-subtitle>
+                            
+                            <mat-card-subtitle >
+                                <i class="fa fa-lock font-weight-bold roColor"></i> 
+                               <span class="ml-2 whitesmoke p-2"> {{node.razorOrderId}}</span>
+                            </mat-card-subtitle>
+    
+                            <mat-card-subtitle>
+                                <h5> <span class="font-weight-bold deliveryColor">STATUS</span> 
+                                    <span class="ml-2 whitesmoke p-2 font-weight-bold">
+                                         {{node.status}} 
+                                         <i class="fa 	fa fa-check-circle font-weight-bold psColor"></i> 
                                      </span>
-                                      <i class="	fa fa-truck font-weight-bold deliveryColor"></i> 
-                                 </span>
-                            </h5>
-                        </mat-card-subtitle>
-
-                        <mat-card-subtitle *ngIf="node.deliveryOrderCompanyName != null">
-                            <h5> <span class="font-weight-bold deliveryColor">DELIVERY-ORDER-NAME </span> 
-                                <span class="ml-2 whitesmoke p-2 font-weight-bold">
-                                     <span>
-                                        : {{node.deliveryOrderCompanyName}} 
-                                         <i class="fa fa-check text-success"></i>
+                                </h5>
+                            </mat-card-subtitle>
+    
+                            <mat-card-subtitle *ngIf="node.deliveryDate != null">
+                                <h5> <span class="font-weight-bold deliveryColor">DELIVERY</span> 
+                                    <span class="ml-2 whitesmoke p-2 font-weight-bold">
+                                         {{node.deliveryDate}}
+                                         <i class="	fa fa-truck font-weight-bold deliveryColor"></i> 
                                      </span>
-                                      <i class="	fa fa-truck font-weight-bold deliveryColor"></i> 
-                                 </span>
-                            </h5>
-                        </mat-card-subtitle>
-
-                        <mat-card-subtitle *ngIf="node.deliveryOrderCompanyName != null">
-                            <h5> <span class="font-weight-bold deliveryColor">DELIVERY-ORDER-ID :</span> 
-                                <span class="ml-2 whitesmoke p-2 font-weight-bold">
-                                     <span>
-                                        {{node.deliveryOrderId}} 
+                                </h5>
+                            </mat-card-subtitle>
+    
+                            <mat-card-subtitle *ngIf="node.deliveryStatus == 'Y'">
+                                <h5> <span class="font-weight-bold deliveryColor">DELIVERY-STATUS</span> 
+                                    <span class="ml-2 whitesmoke p-2 font-weight-bold">
+                                         <span>
+                                             Delivered At : {{node.address}} 
+                                             <i class="fa fa-check text-success"></i>
+                                         </span>
+                                          <i class="	fa fa-truck font-weight-bold deliveryColor"></i> 
                                      </span>
-                                 </span>
-                            </h5>
-                        </mat-card-subtitle>
+                                </h5>
+                            </mat-card-subtitle>
+    
+                            <mat-card-subtitle *ngIf="node.deliveryOrderCompanyName != null">
+                                <h5> <span class="font-weight-bold deliveryColor">DELIVERY-ORDER-NAME </span> 
+                                    <span class="ml-2 whitesmoke p-2 font-weight-bold">
+                                         <span>
+                                            : {{node.deliveryOrderCompanyName}} 
+                                             <i class="fa fa-check text-success"></i>
+                                         </span>
+                                          <i class="	fa fa-truck font-weight-bold deliveryColor"></i> 
+                                     </span>
+                                </h5>
+                            </mat-card-subtitle>
+    
+                            <mat-card-subtitle *ngIf="node.deliveryOrderCompanyName != null">
+                                <h5> <span class="font-weight-bold deliveryColor">DELIVERY-ORDER-ID :</span> 
+                                    <span class="ml-2 whitesmoke p-2 font-weight-bold">
+                                         <span>
+                                            {{node.deliveryOrderId}} 
+                                         </span>
+                                     </span>
+                                </h5>
+                            </mat-card-subtitle>
+    
+                            <mat-card-subtitle *ngIf="node.deliveryDate == null">
+                                <h5> <span class="font-weight-bold ">DELIVERY</span> 
+                                    <span class="ml-2 whitesmoke p-2 font-weight-bold">
+                                         PENDING
+                                         <i class="	fa fa-clock-o font-weight-bold depColor"></i> 
+                                     </span>
+                                </h5>
+                            </mat-card-subtitle>
+                          
+                            <a [routerLink]="'/pd/'+node.productName+'/'+node.productId">       
+                              <img mat-card-sm-image src="{{node.url}}" >
+                            </a> 
+    
+    
+                            </mat-card-title-group>
+                        </mat-card>
+                    </div>
+                </div>
 
-                        <mat-card-subtitle *ngIf="node.deliveryDate == null">
-                            <h5> <span class="font-weight-bold ">DELIVERY</span> 
-                                <span class="ml-2 whitesmoke p-2 font-weight-bold">
-                                     PENDING
-                                     <i class="	fa fa-clock-o font-weight-bold depColor"></i> 
-                                 </span>
-                            </h5>
-                        </mat-card-subtitle>
-                      
-                        <a [routerLink]="'/pd/'+node.productName+'/'+node.productId">       
-                          <img mat-card-sm-image src="{{node.url}}" >
-                        </a> 
 
-
-                        </mat-card-title-group>
-                    </mat-card>
+                <!-- ORDER IS NULL -->
+                <div *ngIf="userOrder == null"class="text-center">
+                        <img src="../../../../../assets/Proj-images/4.svg" width="400" height="550" alt="">
+                        <span  style="font-size: 30px;"> NO ORDERS AVALILABLE</span>
                 </div>
                 
         </div>

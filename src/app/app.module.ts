@@ -43,6 +43,9 @@ import { CategoryNavbarComponent } from './pages/homeDesign/category-navbar/cate
 import { OtpVarifierComponent } from './otp-varifier/otp-varifier.component';
 import { ForgetPasswordComponent } from './pages/forget-password/forget-password/forget-password.component';
 import { NgxUiLoaderHttpModule, NgxUiLoaderModule } from 'ngx-ui-loader';
+import { UserAddressComponent } from './pages/dashboard/user-address/user-address/user-address.component';
+import { UserProfileComponent } from './pages/dashboard/user-profile/user-profile/user-profile.component';
+import { ChangePasswordComponent } from './pages/dashboard/user-change-password/change-password/change-password.component';
 
 
 
@@ -72,6 +75,9 @@ import { NgxUiLoaderHttpModule, NgxUiLoaderModule } from 'ngx-ui-loader';
     CategoryNavbarComponent,
     OtpVarifierComponent,
     ForgetPasswordComponent,
+    UserAddressComponent,
+    UserProfileComponent,
+    ChangePasswordComponent,
     
     
     

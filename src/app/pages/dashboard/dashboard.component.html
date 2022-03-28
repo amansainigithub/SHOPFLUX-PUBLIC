@@ -1,16 +1,70 @@
-<div class="container mt-4">
-
-    <div class="row mb-5">
-
-       <div class="col-sm-3">
-        <app-order-sidebar></app-order-sidebar>
-       </div>
 
 
-        <div class="col-sm-9">
-                <h1 class="text-center" >Profile</h1>
-                
+    <div class="container mt-5 mb-5">
+        <h2 class="yp">Your Account</h2>
+        <div class="row">
+    
+           <!-- <div class="col-sm-3">
+            <app-order-sidebar></app-order-sidebar>
+           </div> -->
+    
+           <div class="col-sm-3">
+            <div class="card p-3 borderRadius8">
+               <a routerLink="userOrder" style="text-decoration: none;">
+                   <div class="text-center">
+                    <i class="fa fa-shopping-bag fa-3x mr-2 colorBag"  aria-hidden="true"></i>
+                    <h2 class="hText">Your Orders</h2>
+                    <p>See Your Current Orders</p>
+                   </div>
+                    
+               </a>
+              </div>
+           </div>
+
+           <div class="col-sm-3">
+            <div class="card p-3 borderRadius8">
+                <a routerLink="user-address" style="text-decoration: none;">
+                    <div class="text-center">
+                        <i class="fa fa-address-card fa-3x mr-2 colorAddress"  aria-hidden="true"></i>
+                     <h2 class="hText">Your Addreses</h2>
+                     <p class="text-dark">Edit Address For Orders</p>
+                    </div>
+                </a>
+               </div>
+           </div>
+
+           <div class="col-sm-3">
+            <div class="card p-3 borderRadius8">
+                <a routerLink="user-profile" style="text-decoration: none;">
+                    <div class="text-center">
+                        <i class="fa fa-address-card fa-3x mr-2 colorProfile"  aria-hidden="true"></i>
+                     <h2 class="hText">My Profile</h2>
+                     <p class="text-dark">Edit your Personal Information</p>
+                    </div>
+                </a>
+               </div>
+           </div>
+
+           <div class="col-sm-3">
+            <div class="card p-3 borderRadius8">
+                <a routerLink="userOrder" style="text-decoration: none;">
+                    <div class="text-center">
+                        <i class="fa fa-paper-plane fa-3x mr-2 colorProfile"  aria-hidden="true"></i>
+                     <h2 class="hText">Refer an Earn</h2>
+                     <p class="text-dark">Earn upto 1000Rs</p>
+                    </div>
+                </a>
+               </div>
+           </div>
+    
+    
         </div>
 
-    </div>
+
+
+        <!-- IMAGE -->
+<div class="text-center mt-5">
+    <img src="../../../assets/Proj-images/1.svg"  height="400"  alt="">
 </div>
+
+    </div>
